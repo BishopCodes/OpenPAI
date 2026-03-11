@@ -62,7 +62,7 @@ Everything else — the skill system, memory architecture, TELOS framework, agen
 
 ```bash
 git clone https://github.com/BishopCodes/OpenPAI.git
-cd OpenPAI/Releases/v4.0.3
+cd OpenPAI
 
 # Copy the release and run the installer
 cp -r .opencode ~/ && cd ~/.opencode && bash install.sh
@@ -84,7 +84,7 @@ cp -r ~/.opencode ~/.opencode-backup-$(date +%Y%m%d)
 
 # 2. Clone and copy the new release
 git clone https://github.com/BishopCodes/OpenPAI.git
-cd OpenPAI/Releases/v4.0.3
+cd OpenPAI
 cp -r .opencode ~/
 
 # 3. Run the installer (detects existing installation, preserves your data)
