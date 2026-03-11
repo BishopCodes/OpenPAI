@@ -1,0 +1,54 @@
+{
+  "voices": {
+    "af_heart": {
+      "name": "Heart",
+      "gender": "female",
+      "description": "Default warm female voice",
+      "lang": "a"
+    },
+    "af_bella": {
+      "name": "Bella",
+      "gender": "female",
+      "description": "Expressive female voice",
+      "lang": "a"
+    },
+    "af_sarah": {
+      "name": "Sarah",
+      "gender": "female",
+      "description": "Clear female voice",
+      "lang": "a"
+    },
+    "af_nicole": {
+      "name": "Nicole",
+      "gender": "female",
+      "description": "Calm female voice",
+      "lang": "a"
+    },
+    "am_adam": {
+      "name": "Adam",
+      "gender": "male",
+      "description": "Default male voice",
+      "lang": "a"
+    },
+    "am_michael": {
+      "name": "Michael",
+      "gender": "male",
+      "description": "Professional male voice",
+      "lang": "a"
+    },
+    "bf_emma": {
+      "name": "Emma",
+      "gender": "female",
+      "description": "British female voice",
+      "lang": "b"
+    },
+    "bm_george": {
+      "name": "George",
+      "gender": "male",
+      "description": "British male voice",
+      "lang": "b"
+    }
+  },
+  "default_voice": "af_heart",
+  "default_speed": 1.0
+}

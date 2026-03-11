@@ -9,39 +9,42 @@
 <br/>
 <br/>
 
-# Personal AI Infrastructure
+# OpenPAI — Personal AI Infrastructure
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=24&pause=1000&color=60A5FA&center=true&vCenter=true&width=600&lines=Everyone+needs+access+to+the+best+AI.;AI+should+magnify+everyone.;Your+personal+AI+stack.)](https://github.com/danielmiessler/Personal_AI_Infrastructure)
+> **🔱 Fork of [PAI](https://github.com/danielmiessler/Personal_AI_Infrastructure) by [Daniel Miessler](https://danielmiessler.com)**
+> Free, open-source variant — replaces paid services with local alternatives and Claude Code with [OpenCode](https://opencode.ai).
+
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=24&pause=1000&color=60A5FA&center=true&vCenter=true&width=600&lines=Everyone+needs+access+to+the+best+AI.;AI+should+magnify+everyone.;Your+personal+AI+stack.)](https://github.com/openpai/OpenPAI)
 
 <br/>
 
 <!-- Social Proof -->
-![Stars](https://img.shields.io/github/stars/danielmiessler/Personal_AI_Infrastructure?style=social)
-![Forks](https://img.shields.io/github/forks/danielmiessler/Personal_AI_Infrastructure?style=social)
-![Watchers](https://img.shields.io/github/watchers/danielmiessler/Personal_AI_Infrastructure?style=social)
+![Stars](https://img.shields.io/github/stars/openpai/Personal_AI_Infrastructure?style=social)
+![Forks](https://img.shields.io/github/forks/openpai/Personal_AI_Infrastructure?style=social)
+![Watchers](https://img.shields.io/github/watchers/openpai/Personal_AI_Infrastructure?style=social)
 
 <!-- Project Health -->
-![Release](https://img.shields.io/github/v/release/danielmiessler/Personal_AI_Infrastructure?style=flat&logo=github&color=8B5CF6)
-![Last Commit](https://img.shields.io/github/last-commit/danielmiessler/Personal_AI_Infrastructure?style=flat&logo=git&color=22C55E)
-![Open Issues](https://img.shields.io/github/issues/danielmiessler/Personal_AI_Infrastructure?style=flat&logo=github&color=F97316)
-![Open PRs](https://img.shields.io/github/issues-pr/danielmiessler/Personal_AI_Infrastructure?style=flat&logo=github&color=EC4899)
-![License](https://img.shields.io/github/license/danielmiessler/Personal_AI_Infrastructure?style=flat&color=60A5FA)
+![Release](https://img.shields.io/github/v/release/openpai/Personal_AI_Infrastructure?style=flat&logo=github&color=8B5CF6)
+![Last Commit](https://img.shields.io/github/last-commit/openpai/Personal_AI_Infrastructure?style=flat&logo=git&color=22C55E)
+![Open Issues](https://img.shields.io/github/issues/openpai/Personal_AI_Infrastructure?style=flat&logo=github&color=F97316)
+![Open PRs](https://img.shields.io/github/issues-pr/openpai/Personal_AI_Infrastructure?style=flat&logo=github&color=EC4899)
+![License](https://img.shields.io/github/license/openpai/Personal_AI_Infrastructure?style=flat&color=60A5FA)
 
 <!-- Metrics -->
-![Discussions](https://img.shields.io/github/discussions/danielmiessler/Personal_AI_Infrastructure?style=flat&logo=github&label=Discussions&color=EAB308)
-![Commit Activity](https://img.shields.io/github/commit-activity/m/danielmiessler/Personal_AI_Infrastructure?style=flat&logo=git&label=Commits%2Fmo&color=F59E0B)
-![Repo Size](https://img.shields.io/github/repo-size/danielmiessler/Personal_AI_Infrastructure?style=flat&logo=database&label=Repo%20Size&color=D97706)
+![Discussions](https://img.shields.io/github/discussions/openpai/Personal_AI_Infrastructure?style=flat&logo=github&label=Discussions&color=EAB308)
+![Commit Activity](https://img.shields.io/github/commit-activity/m/openpai/Personal_AI_Infrastructure?style=flat&logo=git&label=Commits%2Fmo&color=F59E0B)
+![Repo Size](https://img.shields.io/github/repo-size/openpai/Personal_AI_Infrastructure?style=flat&logo=database&label=Repo%20Size&color=D97706)
 
 <!-- Content -->
 [![Get Started](https://img.shields.io/badge/🚀_Get_Started-Install-22C55E?style=flat)](#-installation)
 [![Release v4.0.3](https://img.shields.io/badge/📦_Release-v4.0.3-8B5CF6?style=flat)](Releases/v4.0.3/)
-[![Contributors](https://img.shields.io/github/contributors/danielmiessler/Personal_AI_Infrastructure?style=flat&logo=githubsponsors&logoColor=white&label=Contributors&color=EC4899)](https://github.com/danielmiessler/Personal_AI_Infrastructure/graphs/contributors)
+[![Contributors](https://img.shields.io/github/contributors/openpai/Personal_AI_Infrastructure?style=flat&logo=githubsponsors&logoColor=white&label=Contributors&color=EC4899)](https://github.com/openpai/Personal_AI_Infrastructure/graphs/contributors)
 
 <!-- Tech Stack -->
-[![Built with Claude](https://img.shields.io/badge/Built_with-Claude-D4A574?style=flat&logo=anthropic&logoColor=white)](https://claude.ai)
+[![Built with OpenCode](https://img.shields.io/badge/Built_with-OpenCode-22C55E?style=flat&logo=data:image/svg+xml;base64,&logoColor=white)](https://opencode.ai)
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Bun](https://img.shields.io/badge/Bun-000000?style=flat&logo=bun&logoColor=white)](https://bun.sh)
-[![Community](https://img.shields.io/badge/Community-5865F2?style=flat&logo=discord&logoColor=white)](https://danielmiessler.com/upgrade)
+[![Community](https://img.shields.io/badge/Community-5865F2?style=flat&logo=discord&logoColor=white)](https://openpai.com/upgrade)
 
 <br/>
 
@@ -55,16 +58,31 @@
 
 [![PAI Overview Video](https://img.youtube.com/vi/Le0DLrn7ta0/maxresdefault.jpg)](https://youtu.be/Le0DLrn7ta0)
 
-**[Watch the full PAI walkthrough](https://youtu.be/Le0DLrn7ta0)** | **[Read: The Real Internet of Things](https://danielmiessler.com/blog/real-internet-of-things)**
+**[Watch the full PAI walkthrough](https://youtu.be/Le0DLrn7ta0)** | **[Read: The Real Internet of Things](https://openpai.com/blog/real-internet-of-things)**
 
 ---
 
 </div>
 
 > [!IMPORTANT]
-> **PAI v4.0.3 Released** — 3 patch updates since v4.0.0 with 30+ community-contributed fixes: Linux compatibility, JSON parsing, installer improvements, portability, and upgrade migration.
+> **OpenPAI v4.0.3 Released** — 3 patch updates since v4.0.0 with 30+ community-contributed fixes: Linux compatibility, JSON parsing, installer improvements, portability, and upgrade migration.
 >
 > **[Release notes →](Releases/v4.0.3/README.md)** | **[All releases →](Releases/)**
+
+### What's Different in OpenPAI?
+
+OpenPAI is a free, community fork of Daniel Miessler's PAI. Key changes:
+
+| Original PAI | OpenPAI |
+|---|---|
+| Claude Code (paid) | [OpenCode](https://opencode.ai) (free, open-source) |
+| ElevenLabs TTS (paid API) | [Kokoro 82M](https://github.com/hexgrad/kokoro) (local, free) |
+| Hooks system | Plugins system (OpenCode native) |
+| `~/.claude/` config | `~/.config/openpai/` config |
+| `CLAUDE.md` | `AGENTS.md` |
+| `settings.json` | `opencode.json` |
+
+Same skills, same agents, same philosophy — zero paid API dependencies for core functionality.
 
 <div align="center">
 
@@ -74,13 +92,13 @@
 
 ## The Purpose of This Project
 
-**PAI exists to solve what I believe is the [P0 problem](https://danielmiessler.com/telos) in the world:**
+**PAI exists to solve what I believe is the [P0 problem](https://openpai.com/telos) in the world:**
 
 ### Only a tiny fraction of humanity's creative potential is activated on Earth.
 
 Most people don't believe they have valuable contributions to make. They think there are "special" people—and they aren't one of them. They've never asked who they are, what they're about, and have never articulated or written it down. This makes them catastrophically vulnerable to AI displacement. Without activation, there is no high-agency.
 
-So our goal with PAI is to activate people.
+So our goal with OpenPAI is to activate people.
 
 **PAI's mission is twofold:**
 
@@ -109,7 +127,7 @@ ChatGPT, Claude, Gemini—you ask something, it answers, and then it forgets eve
 
 ### Agentic Platforms
 
-Tools like Claude Code. The AI can actually *do* things—write code, browse the web, edit files, run commands.
+Tools like OpenCode. The AI can actually *do* things—write code, browse the web, edit files, run commands.
 
 **The pattern:** Ask → Use tools → Get result
 
@@ -136,7 +154,7 @@ The key difference: **PAI learns from feedback**. Every interaction makes it bet
 
 ## What is PAI?
 
-PAI is a Personalized AI Platform designed to magnify your capabilities.
+OpenPAI is a Personalized AI Platform designed to magnify your capabilities.
 
 It's designed for humans most of all, but can be used by teams, companies, or Federations of Planets desiring to be better versions of themselves.
 
@@ -160,9 +178,9 @@ The scale of the entity doesn't matter: It's a system for understanding, articul
 
 The first thing people ask is:
 
-> How is this different from Claude Code, or any of the other agentic systems?
+> How is this different from OpenCode, or any of the other agentic systems?
 
-Most agentic systems are built around tools with the user being an afterthought. They are also mostly task-based instead of being goal-based using all the context available to them. PAI is the opposite.
+Most agentic systems are built around tools with the user being an afterthought. They are also mostly task-based instead of being goal-based using all the context available to them. OpenPAI is the opposite.
 
 **Three core differentiators:**
 
@@ -176,11 +194,11 @@ Most agentic systems are built around tools with the user being an afterthought.
 
 ## The PAI Principles
 
-These principles guide how PAI systems are designed and built. **[Full breakdown →](https://danielmiessler.com/blog/personal-ai-infrastructure)**
+These principles guide how OpenPAI systems are designed and built. **[Full breakdown →](https://openpai.com/blog/personal-ai-infrastructure)**
 
 | # | Principle | Summary |
 |---|-----------|---------|
-| 1 | **User Centricity** | PAI is built around you, not tooling. Your goals, preferences, and context come first—the infrastructure exists to serve them. |
+| 1 | **User Centricity** | OpenPAI is built around you, not tooling. Your goals, preferences, and context come first—the infrastructure exists to serve them. |
 | 2 | **The Foundational Algorithm** | The scientific method as a universal problem-solving loop: Observe → Think → Plan → Build → Execute → Verify → Learn. Define the ideal state, iterate until you reach it. |
 | 3 | **Clear Thinking First** | Good prompts come from clear thinking. Clarify the problem before writing the prompt. |
 | 4 | **Scaffolding > Model** | System architecture matters more than which model you use. |
@@ -199,7 +217,7 @@ These principles guide how PAI systems are designed and built. **[Full breakdown
 
 ---
 
-## PAI Primitives
+## OpenPAI Primitives
 
 While the Principles describe the *philosophy* of PAI, the Primitives are the *architecture*—the core systems that make everything work.
 
@@ -217,7 +235,7 @@ These primitives work together to create the experience of working with a system
 
 ### Assistant vs. Agent-Based AI Interaction
 
-PAI treats AI as a [persistent assistant, friend, coach, and mentor](https://danielmiessler.com/blog/personal-ai-maturity-model) rather than a stateless agent that runs tasks. An assistant knows your goals, remembers your preferences, and improves over time. An agent executes commands and forgets.
+PAI treats AI as a [persistent assistant, friend, coach, and mentor](https://openpai.com/blog/personal-ai-maturity-model) rather than a stateless agent that runs tasks. An assistant knows your goals, remembers your preferences, and improves over time. An agent executes commands and forgets.
 
 ---
 
@@ -275,9 +293,9 @@ Focused on continuous learning. Every interaction generates signals—ratings, s
   <img src="./images/pai-component-6-hook-system.png" alt="Hook System" width="700">
 </p>
 
-### Hook System
+### Plugin System
 
-Responds to lifecycle events—session start, tool use, task completion, and more. 8 event types enable voice notifications, automatic context loading, session capture, security validation, and observability.
+Responds to lifecycle events—session start, tool use, task completion, and more. 15+ event types enable voice notifications, automatic context loading, session capture, security validation, and observability.
 
 ---
 
@@ -287,7 +305,7 @@ Responds to lifecycle events—session start, tool use, task completion, and mor
 
 ### Security System
 
-Defines system and user-level security policies by default. You don't have to run with `--dangerously-skip-permissions` to have an uninterrupted experience. PAI's security hooks validate commands before execution, blocking dangerous operations while allowing normal workflows to proceed smoothly.
+Defines system and user-level security policies by default. You don't have to run with `--dangerously-skip-permissions` to have an uninterrupted experience. PAI's security plugins validate commands before execution, blocking dangerous operations while allowing normal workflows to proceed smoothly.
 
 ---
 
@@ -317,7 +335,7 @@ Keeps you informed without being intrusive. Push notifications via ntfy for mobi
 
 ### Voice System
 
-Powered by ElevenLabs TTS. Hear task completions, session summaries, and important updates spoken aloud. Prosody enhancement makes speech sound natural. Your AI has a voice.
+Powered by Kokoro TTS. Hear task completions, session summaries, and important updates spoken aloud. Prosody enhancement makes speech sound natural. Your AI has a voice.
 
 ---
 
@@ -334,24 +352,24 @@ Rich tab titles and pane management. Dynamic status lines show learning signals,
 ## 🚀 Installation
 
 > [!CAUTION]
-> **Project in Active Development** — PAI is evolving rapidly. Expect breaking changes, restructuring, and frequent updates. We are working on stable and development branches, but currently it's all combined.
+> **Project in Active Development** — OpenPAI is evolving rapidly. Expect breaking changes, restructuring, and frequent updates. We are working on stable and development branches, but currently it's all combined.
 
 ### Fresh Install
 
 ```bash
 # Clone the repo
-git clone https://github.com/danielmiessler/Personal_AI_Infrastructure.git
+git clone https://github.com/openpai/Personal_AI_Infrastructure.git
 cd Personal_AI_Infrastructure/Releases/v4.0.3
 
 # Copy the release and run the installer
-cp -r .claude ~/ && cd ~/.claude && bash install.sh
+cp -r .opencode ~/ && cd ~/.opencode && bash install.sh
 ```
 
 **The installer will:**
-- Detect your system and install prerequisites (Bun, Git, Claude Code)
+- Detect your system and install prerequisites (Bun, Git, OpenCode)
 - Ask for your name, AI assistant name, timezone, and temperature unit preference
-- Clone/configure the PAI repository into `~/.claude/`
-- Set up voice features with ElevenLabs (optional)
+- Clone/configure the OpenPAI repository into `~/.config/openpai/`
+- Set up voice features with Kokoro (optional)
 - Configure your shell alias and verify the installation
 
 **After installation:** Run `source ~/.zshrc && pai` to launch PAI.
@@ -360,25 +378,25 @@ cp -r .claude ~/ && cd ~/.claude && bash install.sh
 
 ```bash
 # 1. Back up your current installation
-cp -r ~/.claude ~/.claude-backup-$(date +%Y%m%d)
+cp -r ~/.opencode ~/.opencode-backup-$(date +%Y%m%d)
 
 # 2. Clone and copy the new release over your installation
-git clone https://github.com/danielmiessler/Personal_AI_Infrastructure.git
+git clone https://github.com/openpai/Personal_AI_Infrastructure.git
 cd Personal_AI_Infrastructure/Releases/v4.0.3
-cp -r .claude ~/
+cp -r .opencode ~/
 
 # 3. Run the installer (detects existing installation, preserves your data)
-cd ~/.claude && bash install.sh
+cd ~/.opencode && bash install.sh
 
-# 4. Rebuild your CLAUDE.md
-bun ~/.claude/PAI/Tools/BuildCLAUDE.ts
+# 4. Rebuild your AGENTS.md
+bun ~/.config/openpai/PAI/Tools/BuildAGENTS.ts
 ```
 
 > [!TIP]
-> The installer **auto-detects** existing installations. It preserves your `USER/` files, merges `settings.json` (only updating installer-managed fields like identity and version), and never overwrites your hooks, statusline, or custom configuration.
+> The installer **auto-detects** existing installations. It preserves your `USER/` files, merges `opencode.json` (only updating installer-managed fields like identity and version), and never overwrites your plugins, statusline, or custom configuration.
 
 **Post-upgrade checklist:**
-- [ ] Verify your identity in `settings.json` (name, AI name, timezone)
+- [ ] Verify your identity in `opencode.json` (name, AI name, timezone)
 - [ ] Confirm the statusline displays correctly
 - [ ] Test voice notifications (if enabled)
 - [ ] Run a simple prompt to confirm PAI responds correctly
@@ -387,11 +405,11 @@ bun ~/.claude/PAI/Tools/BuildCLAUDE.ts
 
 ## ❓ FAQ
 
-### How is PAI different from just using Claude Code?
+### How is PAI different from just using OpenCode?
 
-PAI is built natively on Claude Code and designed to stay that way. We chose Claude Code because its hook system, context management, and agentic architecture are the best foundation available for personal AI infrastructure.
+OpenPAI is built natively on OpenCode and designed to stay that way. We chose OpenCode because its plugin system, context management, and agentic architecture are the best foundation available for personal AI infrastructure.
 
-PAI isn't a replacement for Claude Code — it's the layer on top that makes Claude Code *yours*:
+PAI isn't a replacement for OpenCode — it's the layer on top that makes OpenCode *yours*:
 
 - **Persistent memory** — Your DA remembers past sessions, decisions, and learnings
 - **Custom skills** — Specialized capabilities for the things you do most
@@ -399,17 +417,17 @@ PAI isn't a replacement for Claude Code — it's the layer on top that makes Cla
 - **Intelligent routing** — Say "research this" and the right workflow triggers automatically
 - **Self-improvement** — The system modifies itself based on what it learns
 
-Think of it this way: Claude Code is the engine. PAI is everything else that makes it *your* car.
+Think of it this way: OpenCode is the engine. OpenPAI is everything else that makes it *your* car.
 
-### What's the difference between PAI and Claude Code's built-in features?
+### What's the difference between PAI and OpenCode's built-in features?
 
-Claude Code provides powerful primitives — hooks, slash commands, MCP servers, context files. These are individual building blocks.
+OpenCode provides powerful primitives — plugins, slash commands, MCP servers, context files. These are individual building blocks.
 
-PAI is the complete system built on those primitives. It connects everything together: your goals inform your skills, your skills generate memory, your memory improves future responses. PAI turns Claude Code's building blocks into a coherent personal AI platform.
+OpenPAI is the complete system built on those primitives. It connects everything together: your goals inform your skills, your skills generate memory, your memory improves future responses. PAI turns OpenCode's building blocks into a coherent personal AI platform.
 
-### Is PAI only for Claude Code?
+### Is PAI only for OpenCode?
 
-PAI is Claude Code native. We believe Claude Code's hook system, context management, and agentic capabilities make it the best platform for personal AI infrastructure, and PAI is designed to take full advantage of those features.
+OpenPAI is OpenCode native. We believe OpenCode's plugin system, context management, and agentic capabilities make it the best platform for personal AI infrastructure, and OpenPAI is designed to take full advantage of those features.
 
 That said, PAI's concepts (skills, memory, algorithms) are universal, and the code is TypeScript and Bash — so community members are welcome to adapt it for other platforms.
 
@@ -417,15 +435,15 @@ That said, PAI's concepts (skills, memory, algorithms) are universal, and the co
 
 [Fabric](https://github.com/danielmiessler/fabric) is a collection of AI prompts (patterns) for specific tasks. It's focused on *what to ask AI*.
 
-PAI is infrastructure for *how your DA operates*—memory, skills, routing, context, self-improvement. They're complementary. Many PAI users integrate Fabric patterns into their skills.
+OpenPAI is infrastructure for *how your DA operates*—memory, skills, routing, context, self-improvement. They're complementary. Many PAI users integrate Fabric patterns into their skills.
 
 ### What if I break something?
 
 Recovery is straightforward:
 
-- **Back up first** — Before any upgrade: `cp -r ~/.claude ~/.claude-backup-$(date +%Y%m%d)`
+- **Back up first** — Before any upgrade: `cp -r ~/.opencode ~/.opencode-backup-$(date +%Y%m%d)`
 - **USER/ is safe** — Your customizations in `USER/` are never touched by the installer or upgrades
-- **Settings merge, not overwrite** — The installer only updates identity and version fields; your hooks, statusline, and custom config are preserved
+- **Settings merge, not overwrite** — The installer only updates identity and version fields; your plugins, statusline, and custom config are preserved
 - **Git-backed** — Version control everything, roll back when needed
 - **History is preserved** — Your DA's memory survives mistakes
 - **DA can fix it** — Your DA helped build it, it can help repair it
@@ -447,21 +465,21 @@ Recovery is straightforward:
 
 ## 🌐 Community
 
-**GitHub Discussions:** [Join the conversation](https://github.com/danielmiessler/Personal_AI_Infrastructure/discussions)
+**GitHub Discussions:** [Join the conversation](https://github.com/openpai/Personal_AI_Infrastructure/discussions)
 
-**Community Discord:** PAI is discussed in the [community Discord](https://danielmiessler.com/upgrade) along with other AI projects
+**Community Discord:** OpenPAI is discussed in the [community Discord](https://openpai.com/upgrade) along with other AI projects
 
-**Twitter/X:** [@danielmiessler](https://twitter.com/danielmiessler)
+**Twitter/X:** [@openpai](https://twitter.com/openpai)
 
-**Blog:** [danielmiessler.com](https://danielmiessler.com)
+**Blog:** [openpai.com](https://openpai.com)
 
 ### Star History
 
-<a href="https://star-history.com/#danielmiessler/Personal_AI_Infrastructure&Date">
+<a href="https://star-history.com/#openpai/Personal_AI_Infrastructure&Date">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=danielmiessler/Personal_AI_Infrastructure&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=danielmiessler/Personal_AI_Infrastructure&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=danielmiessler/Personal_AI_Infrastructure&type=Date" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=openpai/Personal_AI_Infrastructure&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=openpai/Personal_AI_Infrastructure&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=openpai/Personal_AI_Infrastructure&type=Date" />
  </picture>
 </a>
 
@@ -469,7 +487,7 @@ Recovery is straightforward:
 
 ## 🤝 Contributing
 
-We welcome contributions! See our [GitHub Issues](https://github.com/danielmiessler/Personal_AI_Infrastructure/issues) for open tasks.
+We welcome contributions! See our [GitHub Issues](https://github.com/openpai/Personal_AI_Infrastructure/issues) for open tasks.
 
 1. **Fork the repository**
 2. **Make your changes** — Bug fixes, new skills, documentation improvements
@@ -486,7 +504,11 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 ## 🙏 Credits
 
-**Anthropic and the Claude Code team** — First and foremost. You are moving AI further and faster than anyone right now. Claude Code is the foundation that makes all of this possible.
+**[Daniel Miessler](https://danielmiessler.com)** — Creator of the original [PAI (Personal AI Infrastructure)](https://github.com/danielmiessler/Personal_AI_Infrastructure). OpenPAI is a fork of PAI v4.0.3. Daniel's vision of AI that magnifies everyone—not just the top 1%—is the foundation this project stands on.
+
+**Anthropic and the Claude team** — The AI models powering the intelligence behind PAI.
+
+**The [OpenCode](https://opencode.ai) team** — The agentic coding platform that OpenPAI is built on.
 
 **[IndyDevDan](https://www.youtube.com/@indydevdan)** — For great videos on meta-prompting and custom agents that have inspired parts of PAI.
 
@@ -502,9 +524,9 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 <div align="center">
 
-<a href="https://github.com/sponsors/danielmiessler"><img src="https://img.shields.io/badge/Sponsor-❤️-EA4AAA?style=for-the-badge&logo=github-sponsors&logoColor=white" alt="Sponsor"></a>
+<a href="https://github.com/sponsors/openpai"><img src="https://img.shields.io/badge/Sponsor-❤️-EA4AAA?style=for-the-badge&logo=github-sponsors&logoColor=white" alt="Sponsor"></a>
 
-**PAI is free and open-source forever. If you find it valuable, you can [sponsor the project](https://github.com/sponsors/danielmiessler).**
+**OpenPAI is free and open-source forever. If you find it valuable, you can [sponsor the project](https://github.com/sponsors/openpai).**
 
 </div>
 
@@ -512,9 +534,9 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 ## 📚 Related Reading
 
-- [The Real Internet of Things](https://danielmiessler.com/blog/real-internet-of-things) — The vision behind PAI
-- [AI's Predictable Path: 7 Components](https://danielmiessler.com/blog/ai-predictable-path-7-components-2024) — Visual walkthrough of where AI is heading
-- [Building a Personal AI Infrastructure](https://danielmiessler.com/blog/personal-ai-infrastructure) — Full PAI walkthrough with examples
+- [The Real Internet of Things](https://openpai.com/blog/real-internet-of-things) — The vision behind PAI
+- [AI's Predictable Path: 7 Components](https://openpai.com/blog/ai-predictable-path-7-components-2024) — Visual walkthrough of where AI is heading
+- [Building a Personal AI Infrastructure](https://openpai.com/blog/personal-ai-infrastructure) — Full PAI walkthrough with examples
 
 ---
 
@@ -531,7 +553,7 @@ MIT License - see [LICENSE](LICENSE) for details.
 - [Release Notes](Releases/v4.0.3/README.md)
 
 **v4.0.2 (2026-03-01) — Bug Fix Patch**
-- 13 surgical fixes: Linux compatibility, installer, statusline, hooks
+- 13 surgical fixes: Linux compatibility, installer, statusline, plugins
 - Cross-platform OAuth token extraction, GNU coreutils tr fix
 - Inference guard (~15s savings), lineage tracking, dead code removal
 - [Release Notes](Releases/v4.0.2/README.md)
@@ -545,11 +567,11 @@ MIT License - see [LICENSE](LICENSE) for details.
 **v4.0.0 (2026-02-27) — Lean and Mean**
 - 38 flat skill directories → 12 hierarchical categories (-68% top-level dirs)
 - Dead systems removed: Components/, DocRebuild, RebuildSkill
-- CLAUDE.md template system with BuildCLAUDE.ts + SessionStart hook
+- AGENTS.md template system with BuildAGENTS.ts + SessionStart plugin
 - Algorithm v3.5.0 (up from v1.4.0)
 - Comprehensive security sanitization (33+ files cleaned)
 - All version refs updated, Electron crash fix
-- 63 skills, 21 hooks, 180 workflows, 14 agents
+- 63 skills, 21 plugins, 180 workflows, 14 agents
 - [Release Notes](Releases/v4.0.0/README.md)
 
 **v3.0.0 (2026-02-15) — The Algorithm Matures**
@@ -557,27 +579,27 @@ MIT License - see [LICENSE](LICENSE) for details.
 - Persistent PRDs and parallel loop execution
 - Full installer with GUI wizard
 - 10 new skills, agent teams/swarm, voice personality system
-- 38 skills, 20 hooks, 162 workflows
+- 38 skills, 20 plugins, 162 workflows
 - [Release Notes](Releases/v3.0/README.md)
 
 **v2.5.0 (2026-01-30) — Think Deeper, Execute Faster**
 - Two-Pass Capability Selection: Hook hints validated against ISC in THINK phase
 - Thinking Tools with Justify-Exclusion: Opt-OUT, not opt-IN for Council, RedTeam, FirstPrinciples, etc.
 - Parallel-by-Default Execution: Independent tasks run concurrently via parallel agent spawning
-- 28 skills, 17 hooks, 356 workflows
+- 28 skills, 17 plugins, 356 workflows
 - [Release Notes](Releases/v2.5/README.md)
 
 **v2.4.0 (2026-01-23) — The Algorithm**
 - Universal problem-solving system with ISC (Ideal State Criteria) tracking
-- 29 skills, 15 hooks, 331 workflows
+- 29 skills, 15 plugins, 331 workflows
 - Euphoric Surprise as the outcome metric
 - Enhanced security with AllowList enforcement
 - [Release Notes](Releases/v2.4/README.md)
 
 **v2.3.0 (2026-01-15) — Full Releases Return**
-- Complete `.claude/` directory releases with continuous learning
+- Complete `.opencode/` directory releases with continuous learning
 - Explicit and implicit rating capture
-- Enhanced hook system with 14 production hooks
+- Enhanced plugin system with 14 production plugins
 - Status line with learning signal display
 - [Release Notes](Releases/v2.3/README.md)
 
@@ -589,7 +611,7 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 **v2.0.0 (2025-12-28) — PAI v2 Launch**
 - Modular architecture with independent skills
-- Claude Code native design
+- OpenCode native design
 
 </details>
 
@@ -597,7 +619,7 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 <div align="center">
 
-**Built with ❤️ by [Daniel Miessler](https://danielmiessler.com) and the PAI community**
+**Built with ❤️ by the OpenPAI community — forked from [PAI](https://github.com/danielmiessler/Personal_AI_Infrastructure) by [Daniel Miessler](https://danielmiessler.com)**
 
 *Augment yourself.*
 

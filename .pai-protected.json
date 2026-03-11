@@ -182,7 +182,14 @@
             "~/.claude/skills/CORE/USER/",
             "~/.claude/MEMORY/",
             "~/.claude/History/",
-            "/Users/daniel/.claude/skills/personal"
+            "/Users/daniel/.claude/skills/personal",
+            "/Users/[a-z]+/\\.config/openpai/",
+            "/home/[a-z]+/\\.config/openpai/",
+            "~/.config/openpai/MEMORY/",
+            "~/.config/openpai/PAI/USER/",
+            "~/.config/openpai/History/",
+            "/Users/[a-z]+/\\.opencode/",
+            "/home/[a-z]+/\\.opencode/"
           ]
         },
         "internal_infrastructure": {
@@ -333,7 +340,13 @@
         "Releases/*/.claude/skills/PAI/USER/PAISECURITYSYSTEM/*.yaml",
         "Releases/*/.claude/skills/PAI/PAISECURITYSYSTEM/*.yaml",
         "Releases/*/.claude/skills/Parser/Prompts/*.md",
-        "Releases/*/.claude/skills/Parser/Utils/*.ts"
+        "Releases/*/.claude/skills/Parser/Utils/*.ts",
+        "Releases/*/.opencode/plugins/*.ts",
+        "Releases/*/.opencode/plugins/lib/*.ts",
+        "Releases/*/.opencode/agents/*.md",
+        "Releases/*/.opencode/skills/*/SKILL.md",
+        "Releases/*/.opencode/skills/*/Workflows/*.md",
+        "Releases/*/.opencode/skills/*/Tools/*.ts"
       ],
       "exception_contexts": {
         "description": "Patterns that are OK when in documentation/example context",
@@ -400,8 +413,13 @@
           "USER tier",
           "~/.claude/skills",
           "~/.claude/hooks",
+          "~/.config/openpai/skills",
+          "~/.config/openpai/plugins",
+          "~/.opencode/skills",
+          "~/.opencode/plugins",
           "$PAI_DIR/skills",
           "$PAI_DIR/hooks",
+          "$PAI_DIR/plugins",
           "ANTHROPIC_API_KEY=your",
           "your_api_key",
           "noreply@anthropic.com",

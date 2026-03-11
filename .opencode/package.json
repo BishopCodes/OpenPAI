@@ -1,0 +1,13 @@
+{
+  "name": "openpai-plugins",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@opencode-ai/plugin": "latest",
+    "yaml": "^2.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.4.0",
+    "typescript": "^5.9.3"
+  }
+}

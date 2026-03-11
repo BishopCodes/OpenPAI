@@ -1,6 +1,8 @@
-# PAI Platform Compatibility Status
+# OpenPAI Platform Compatibility Status
 
-This document tracks all platform-specific code and dependencies across PAI, providing a roadmap for cross-platform support.
+> Forked from [PAI](https://github.com/danielmiessler/Personal_AI_Infrastructure) by [Daniel Miessler](https://danielmiessler.com)
+
+This document tracks all platform-specific code and dependencies across OpenPAI, providing a roadmap for cross-platform support.
 
 **Last Updated:** 2026-01-01
 **Maintainer:** Community contributions welcome
@@ -179,7 +181,7 @@ Contributors fixing platform issues should:
 5. **Add to this document** - Update the inventory with your fixes
 
 **Current test coverage:**
-- macOS: Tested by Daniel Miessler
+- macOS: Tested by Daniel Miessler (original PAI)
 - Linux (Ubuntu/WSL2): Tested by contributors
 - Linux (other distros): Community testing
 - Windows: Untested
@@ -238,7 +240,7 @@ When contributing platform fixes:
 ## Credits
 
 **Platform compatibility work by:**
-- Daniel Miessler - Original PAI implementation (macOS focus)
+- [Daniel Miessler](https://danielmiessler.com) — Original PAI implementation (macOS focus)
 - PR #285 - Google Cloud TTS provider, Linux audio support
 - PR #XXX - Linux compatibility fixes (sed, PATH, systemd)
 - Community contributors - Testing and bug reports

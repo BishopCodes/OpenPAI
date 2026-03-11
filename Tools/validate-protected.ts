@@ -317,10 +317,9 @@ function checkFileContent(filePath: string, manifest: ProtectedManifest): {
     if (category.validation.includes('secrets') && !isException) {
       const secretPatterns = [
         /ANTHROPIC_API_KEY=sk-/,
-        /ELEVENLABS_API_KEY=(?!your_elevenlabs_api_key_here)/,
+        /KOKORO_API_KEY=(?!your_kokoro_api_key_here)/,
         /PERPLEXITY_API_KEY=(?!your_perplexity_api_key_here)/,
-        /@danielmiessler\.com/,
-        /@unsupervised-learning\.com/,
+        /@openpai\.com/,
       ];
 
       for (const pattern of secretPatterns) {
@@ -392,7 +391,7 @@ async function main() {
       console.log('  - pii_ssn_financial (SSN, EIN, credit cards)');
       console.log('  - pii_phone         (phone numbers)');
       console.log('  - personal_emails   (@gmail, @yahoo, etc.)');
-      console.log('  - private_paths     (/Users/daniel/, ~/.claude/)');
+      console.log('  - private_paths     (/Users/daniel/, ~/.opencode/)');
       console.log('  - internal_infrastructure (private IPs, .internal.)');
       console.log('  - customer_data     (customer_id, client_name)');
       console.log('  - team_members      (real names of team members)');

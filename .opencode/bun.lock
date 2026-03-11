@@ -1,0 +1,31 @@
+{
+  "lockfileVersion": 1,
+  "workspaces": {
+    "": {
+      "name": "openpai-plugins",
+      "dependencies": {
+        "@opencode-ai/plugin": "latest",
+        "yaml": "^2.7.0",
+      },
+      "devDependencies": {
+        "@types/node": "^25.4.0",
+        "typescript": "^5.9.3",
+      },
+    },
+  },
+  "packages": {
+    "@opencode-ai/plugin": ["@opencode-ai/plugin@1.2.24", "https://uop-domain-050853773894.d.codeartifact.us-east-1.amazonaws.com/npm/npm-store/@opencode-ai/plugin/-/plugin-1.2.24.tgz", { "dependencies": { "@opencode-ai/sdk": "1.2.24", "zod": "4.1.8" } }, "sha512-B3hw415D+2w6AtdRdvKWkuQVT0LXDWTdnAZhZC6gbd+UHh5O5DMmnZTe/YM8yK8ZZO9Dvo5rnV78TdDDYunJiw=="],
+
+    "@opencode-ai/sdk": ["@opencode-ai/sdk@1.2.24", "https://uop-domain-050853773894.d.codeartifact.us-east-1.amazonaws.com/npm/npm-store/@opencode-ai/sdk/-/sdk-1.2.24.tgz", {}, "sha512-MQamFkRl4B/3d6oIRLNpkYR2fcwet1V/ffKyOKJXWjtP/CT9PDJMtLpu6olVHjXKQi8zMNltwuMhv1QsNtRlZg=="],
+
+    "@types/node": ["@types/node@25.4.0", "https://uop-domain-050853773894.d.codeartifact.us-east-1.amazonaws.com/npm/npm-store/@types/node/-/node-25.4.0.tgz", { "dependencies": { "undici-types": "~7.18.0" } }, "sha512-9wLpoeWuBlcbBpOY3XmzSTG3oscB6xjBEEtn+pYXTfhyXhIxC5FsBer2KTopBlvKEiW9l13po9fq+SJY/5lkhw=="],
+
+    "typescript": ["typescript@5.9.3", "https://uop-domain-050853773894.d.codeartifact.us-east-1.amazonaws.com/npm/npm-store/typescript/-/typescript-5.9.3.tgz", { "bin": { "tsc": "bin/tsc", "tsserver": "bin/tsserver" } }, "sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw=="],
+
+    "undici-types": ["undici-types@7.18.2", "https://uop-domain-050853773894.d.codeartifact.us-east-1.amazonaws.com/npm/npm-store/undici-types/-/undici-types-7.18.2.tgz", {}, "sha512-AsuCzffGHJybSaRrmr5eHr81mwJU3kjw6M+uprWvCXiNeN9SOGwQ3Jn8jb8m3Z6izVgknn1R0FTCEAP2QrLY/w=="],
+
+    "yaml": ["yaml@2.8.2", "https://uop-domain-050853773894.d.codeartifact.us-east-1.amazonaws.com/npm/npm-store/yaml/-/yaml-2.8.2.tgz", { "bin": { "yaml": "bin.mjs" } }, "sha512-mplynKqc1C2hTVYxd0PU2xQAc22TI1vShAYGksCCfxbn/dFwnHTNi1bvYsBTkhdUNtGIf5xNOg938rrSSYvS9A=="],
+
+    "zod": ["zod@4.1.8", "https://uop-domain-050853773894.d.codeartifact.us-east-1.amazonaws.com/npm/npm-store/zod/-/zod-4.1.8.tgz", {}, "sha512-5R1P+WwQqmmMIEACyzSvo4JXHY5WiAFHRMg+zBZKgKS+Q1viRa0C1hmUKtHltoIFKtIdki3pRxkmpP74jnNYHQ=="],
+  }
+}

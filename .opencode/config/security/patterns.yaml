@@ -1,0 +1,147 @@
+# OpenPAI Security Patterns
+# Default system-level patterns for the SecurityValidator plugin.
+# Loaded from: ~/.config/openpai/PAI/SECURITY/patterns.yaml (system)
+# Override:     ~/.config/openpai/PAI/USER/SECURITY/patterns.yaml (user)
+#
+# User patterns merge with (not replace) system patterns.
+# Patterns support glob-style wildcards: * matches any characters.
+
+bash:
+  # Commands allowed without confirmation
+  trusted:
+    - "ls *"
+    - "cat *"
+    - "head *"
+    - "tail *"
+    - "wc *"
+    - "grep *"
+    - "rg *"
+    - "find *"
+    - "echo *"
+    - "pwd"
+    - "date"
+    - "which *"
+    - "type *"
+    - "file *"
+    - "stat *"
+    - "git status*"
+    - "git log*"
+    - "git diff*"
+    - "git branch*"
+    - "git show*"
+    - "git blame*"
+    - "npm list*"
+    - "npm info*"
+    - "npm outdated*"
+    - "bun pm ls*"
+    - "node --version"
+    - "bun --version"
+    - "python --version"
+    - "python3 --version"
+
+  # Commands always blocked — never execute
+  blocked:
+    - "rm -rf /"
+    - "rm -rf /*"
+    - "rm -rf ~"
+    - "rm -rf ~/*"
+    - "mkfs*"
+    - "dd if=*of=/dev/*"
+    - ":(){:|:&};:"
+    - "chmod -R 777 /"
+    - "chmod -R 777 /*"
+    - "> /dev/sda"
+    - "curl * | bash"
+    - "curl * | sh"
+    - "wget * | bash"
+    - "wget * | sh"
+    - "*--no-preserve-root*"
+    - "shutdown*"
+    - "reboot*"
+    - "init 0"
+    - "init 6"
+    - "launchctl *unload*"
+
+  # Commands requiring user confirmation
+  confirm:
+    - "rm -rf *"
+    - "rm -r *"
+    - "git push --force*"
+    - "git push -f *"
+    - "git reset --hard*"
+    - "git clean -fd*"
+    - "docker system prune*"
+    - "docker rm *"
+    - "docker rmi *"
+    - "npm publish*"
+    - "brew uninstall*"
+    - "pip uninstall*"
+    - "chmod -R *"
+    - "chown -R *"
+    - "sudo *"
+    - "doas *"
+
+  # Commands that are allowed but logged for audit
+  alert:
+    - "curl *"
+    - "wget *"
+    - "ssh *"
+    - "scp *"
+    - "rsync *"
+    - "git push*"
+    - "npm install*"
+    - "npm run build*"
+    - "bun install*"
+    - "pip install*"
+    - "brew install*"
+    - "docker run*"
+    - "docker build*"
+
+files:
+  # Absolute deny — no read, write, or delete
+  zeroAccess:
+    - "*.pem"
+    - "*.key"
+    - "*id_rsa*"
+    - "*id_ed25519*"
+    - "*/.ssh/config"
+    - "*/.aws/credentials"
+    - "*/.env.local"
+    - "*/.env.production"
+    - "*/secrets/*"
+    - "*/.gnupg/*"
+    - "*/keychain*"
+    - "*/.netrc"
+
+  # Read allowed, write/delete blocked
+  readOnly:
+    - "*/package-lock.json"
+    - "*/bun.lock"
+    - "*/yarn.lock"
+    - "*/.git/HEAD"
+    - "*/.git/config"
+    - "*/LICENSE"
+    - "*/LICENSE.*"
+
+  # Write requires user confirmation
+  confirmWrite:
+    - "*/.gitignore"
+    - "*/.env"
+    - "*/.env.example"
+    - "*/Makefile"
+    - "*/Dockerfile"
+    - "*/docker-compose*"
+    - "*/.github/workflows/*"
+    - "*/tsconfig.json"
+    - "*/package.json"
+    - "*/opencode.json"
+
+  # Delete always blocked
+  noDelete:
+    - "*/.git/*"
+    - "*/node_modules/*"
+    - "*/.opencode/*"
+    - "*/README.md"
+    - "*/README"
+    - "*/LICENSE"
+    - "*/.env.example"

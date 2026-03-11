@@ -3,7 +3,7 @@
  * BackupRestore - Backup and restore PAI installations
  *
  * Commands:
- *   backup [--name <label>]  - Create timestamped backup of ~/.claude
+ *   backup [--name <label>]  - Create timestamped backup of ~/.opencode
  *   restore <backup-name>    - Restore from backup
  *   list                     - List available backups
  *   migrate <backup>         - Analyze backup for migration candidates
@@ -12,8 +12,8 @@
  *   bun BackupRestore.ts backup
  *   bun BackupRestore.ts backup --name "before-upgrade"
  *   bun BackupRestore.ts list
- *   bun BackupRestore.ts restore claude-backup-20260114-153000
- *   bun BackupRestore.ts migrate claude-backup-20260114-153000
+ *   bun BackupRestore.ts restore openpai-backup-20260114-153000
+ *   bun BackupRestore.ts migrate openpai-backup-20260114-153000
  */
 
 import { existsSync, readdirSync, statSync, readFileSync, cpSync, rmSync } from "fs";
@@ -21,8 +21,8 @@ import { homedir } from "os";
 import { join, basename } from "path";
 
 const HOME = homedir();
-const CLAUDE_DIR = join(HOME, ".claude");
-const BACKUP_PREFIX = "claude-backup-";
+const OPENPAI_DIR = join(HOME, ".opencode");
+const BACKUP_PREFIX = "openpai-backup-";
 
 interface BackupInfo {
   name: string;
@@ -85,8 +85,8 @@ function listBackups(): BackupInfo[] {
           path: backupPath,
           date: stats.mtime,
           size: formatSize(size),
-          hasSettings: existsSync(join(backupPath, "settings.json")),
-          hasHooks: existsSync(join(backupPath, "hooks")),
+      hasSettings: existsSync(join(backupPath, "opencode.json")),
+      hasPlugins: existsSync(join(backupPath, "plugins")),
           hasSkills: existsSync(join(backupPath, "skills")),
         });
       }
@@ -99,8 +99,8 @@ function listBackups(): BackupInfo[] {
 }
 
 function createBackup(customName?: string): string | null {
-  if (!existsSync(CLAUDE_DIR)) {
-    console.error("Error: ~/.claude directory does not exist. Nothing to backup.");
+  if (!existsSync(OPENPAI_DIR)) {
+    console.error("Error: ~/.opencode directory does not exist. Nothing to backup.");
     return null;
   }
 
@@ -116,11 +116,11 @@ function createBackup(customName?: string): string | null {
   }
 
   console.log(`Creating backup: ${backupName}`);
-  console.log(`Source: ${CLAUDE_DIR}`);
+  console.log(`Source: ${OPENPAI_DIR}`);
   console.log(`Destination: ${backupPath}`);
 
   try {
-    cpSync(CLAUDE_DIR, backupPath, { recursive: true });
+    cpSync(OPENPAI_DIR, backupPath, { recursive: true });
     const size = getDirSize(backupPath);
     console.log(`\nBackup complete: ${formatSize(size)}`);
     console.log(`Location: ~/${backupName}`);
@@ -146,7 +146,7 @@ function restoreBackup(backupName: string): boolean {
   }
 
   // Backup current before restore
-  if (existsSync(CLAUDE_DIR)) {
+  if (existsSync(OPENPAI_DIR)) {
     const preRestoreBackup = createBackup("pre-restore");
     if (!preRestoreBackup) {
       console.error("Failed to create pre-restore backup. Aborting.");
@@ -156,14 +156,14 @@ function restoreBackup(backupName: string): boolean {
 
     // Remove current
     console.log("Removing current installation...");
-    rmSync(CLAUDE_DIR, { recursive: true, force: true });
+    rmSync(OPENPAI_DIR, { recursive: true, force: true });
   }
 
   console.log(`\nRestoring from: ${backupPath}`);
-  console.log(`Destination: ${CLAUDE_DIR}`);
+  console.log(`Destination: ${OPENPAI_DIR}`);
 
   try {
-    cpSync(backupPath, CLAUDE_DIR, { recursive: true });
+    cpSync(backupPath, OPENPAI_DIR, { recursive: true });
     console.log("\nRestore complete!");
     console.log("Restart your DA session for changes to take effect.");
     return true;
@@ -185,8 +185,8 @@ function analyzeMigration(backupName: string): MigrationCandidate[] {
 
   const candidates: MigrationCandidate[] = [];
 
-  // Check settings.json
-  const settingsPath = join(backupPath, "settings.json");
+  // Check opencode.json
+  const settingsPath = join(backupPath, "opencode.json");
   if (existsSync(settingsPath)) {
     try {
       const settings = JSON.parse(readFileSync(settingsPath, "utf-8"));
@@ -194,7 +194,7 @@ function analyzeMigration(backupName: string): MigrationCandidate[] {
       if (settings.daidentity) {
         candidates.push({
           type: "settings",
-          path: "settings.json → daidentity",
+          path: "opencode.json → daidentity",
           description: `DA Identity: ${settings.daidentity.name || "unnamed"} (${settings.daidentity.fullName || ""})`,
         });
       }
@@ -202,21 +202,21 @@ function analyzeMigration(backupName: string): MigrationCandidate[] {
       if (settings.principal) {
         candidates.push({
           type: "settings",
-          path: "settings.json → principal",
+          path: "opencode.json → principal",
           description: `Principal: ${settings.principal.name || "unnamed"} (${settings.principal.timezone || ""})`,
         });
       }
 
-      if (settings.hooks) {
-        const hookCount = Object.keys(settings.hooks).length;
+      if (settings.plugins) {
+        const pluginCount = Object.keys(settings.plugins).length;
         candidates.push({
           type: "settings",
-          path: "settings.json → hooks",
-          description: `${hookCount} hook event(s) configured`,
+          path: "opencode.json → plugins",
+          description: `${pluginCount} plugin event(s) configured`,
         });
       }
     } catch {
-      console.warn("Warning: Could not parse settings.json");
+      console.warn("Warning: Could not parse opencode.json");
     }
   }
 
@@ -224,12 +224,12 @@ function analyzeMigration(backupName: string): MigrationCandidate[] {
   const hooksDir = join(backupPath, "hooks");
   if (existsSync(hooksDir)) {
     try {
-      const hooks = readdirSync(hooksDir).filter((f) => f.endsWith(".hook.ts"));
-      for (const hook of hooks) {
+      const plugins = readdirSync(hooksDir).filter((f) => f.endsWith(".plugin.ts"));
+      for (const plugin of plugins) {
         candidates.push({
           type: "hook",
-          path: `hooks/${hook}`,
-          description: `Custom hook: ${hook.replace(".hook.ts", "")}`,
+          path: `hooks/${plugin}`,
+          description: `Custom plugin: ${plugin.replace(".plugin.ts", "")}`,
         });
       }
     } catch {
@@ -288,7 +288,7 @@ Usage:
   bun BackupRestore.ts <command> [options]
 
 Commands:
-  backup [--name <label>]  Create timestamped backup of ~/.claude
+  backup [--name <label>]  Create timestamped backup of ~/.opencode
   restore <backup-name>    Restore from backup (creates pre-restore backup first)
   list                     List available backups
   migrate <backup>         Analyze backup for migration candidates
@@ -381,13 +381,13 @@ switch (command) {
       };
 
       if (byType.settings.length > 0) {
-        console.log("Settings (can merge into new settings.json):");
+        console.log("Settings (can merge into new opencode.json):");
         byType.settings.forEach((c) => console.log(`  - ${c.description}`));
         console.log("");
       }
 
       if (byType.hook.length > 0) {
-        console.log("Custom Hooks (copy to new hooks/ directory):");
+        console.log("Custom Plugins (copy to new plugins/ directory):");
         byType.hook.forEach((c) => console.log(`  - ${c.path}`));
         console.log("");
       }
