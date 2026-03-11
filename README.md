@@ -14,37 +14,37 @@
 > **🔱 Fork of [PAI](https://github.com/danielmiessler/Personal_AI_Infrastructure) by [Daniel Miessler](https://danielmiessler.com)**
 > Free, open-source variant — replaces paid services with local alternatives and Claude Code with [OpenCode](https://opencode.ai).
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=24&pause=1000&color=60A5FA&center=true&vCenter=true&width=600&lines=Everyone+needs+access+to+the+best+AI.;AI+should+magnify+everyone.;Your+personal+AI+stack.)](https://github.com/openpai/OpenPAI)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=24&pause=1000&color=60A5FA&center=true&vCenter=true&width=600&lines=Everyone+needs+access+to+the+best+AI.;AI+should+magnify+everyone.;Your+personal+AI+stack.)](https://github.com/BishopCodes/OpenPAI)
 
 <br/>
 
 <!-- Social Proof -->
-![Stars](https://img.shields.io/github/stars/openpai/Personal_AI_Infrastructure?style=social)
-![Forks](https://img.shields.io/github/forks/openpai/Personal_AI_Infrastructure?style=social)
-![Watchers](https://img.shields.io/github/watchers/openpai/Personal_AI_Infrastructure?style=social)
+![Stars](https://img.shields.io/github/stars/BishopCodes/OpenPAI?style=social)
+![Forks](https://img.shields.io/github/forks/BishopCodes/OpenPAI?style=social)
+![Watchers](https://img.shields.io/github/watchers/BishopCodes/OpenPAI?style=social)
 
 <!-- Project Health -->
-![Release](https://img.shields.io/github/v/release/openpai/Personal_AI_Infrastructure?style=flat&logo=github&color=8B5CF6)
-![Last Commit](https://img.shields.io/github/last-commit/openpai/Personal_AI_Infrastructure?style=flat&logo=git&color=22C55E)
-![Open Issues](https://img.shields.io/github/issues/openpai/Personal_AI_Infrastructure?style=flat&logo=github&color=F97316)
-![Open PRs](https://img.shields.io/github/issues-pr/openpai/Personal_AI_Infrastructure?style=flat&logo=github&color=EC4899)
-![License](https://img.shields.io/github/license/openpai/Personal_AI_Infrastructure?style=flat&color=60A5FA)
+![Release](https://img.shields.io/github/v/release/BishopCodes/OpenPAI?style=flat&logo=github&color=8B5CF6)
+![Last Commit](https://img.shields.io/github/last-commit/BishopCodes/OpenPAI?style=flat&logo=git&color=22C55E)
+![Open Issues](https://img.shields.io/github/issues/BishopCodes/OpenPAI?style=flat&logo=github&color=F97316)
+![Open PRs](https://img.shields.io/github/issues-pr/BishopCodes/OpenPAI?style=flat&logo=github&color=EC4899)
+![License](https://img.shields.io/github/license/BishopCodes/OpenPAI?style=flat&color=60A5FA)
 
 <!-- Metrics -->
-![Discussions](https://img.shields.io/github/discussions/openpai/Personal_AI_Infrastructure?style=flat&logo=github&label=Discussions&color=EAB308)
-![Commit Activity](https://img.shields.io/github/commit-activity/m/openpai/Personal_AI_Infrastructure?style=flat&logo=git&label=Commits%2Fmo&color=F59E0B)
-![Repo Size](https://img.shields.io/github/repo-size/openpai/Personal_AI_Infrastructure?style=flat&logo=database&label=Repo%20Size&color=D97706)
+![Discussions](https://img.shields.io/github/discussions/BishopCodes/OpenPAI?style=flat&logo=github&label=Discussions&color=EAB308)
+![Commit Activity](https://img.shields.io/github/commit-activity/m/BishopCodes/OpenPAI?style=flat&logo=git&label=Commits%2Fmo&color=F59E0B)
+![Repo Size](https://img.shields.io/github/repo-size/BishopCodes/OpenPAI?style=flat&logo=database&label=Repo%20Size&color=D97706)
 
 <!-- Content -->
 [![Get Started](https://img.shields.io/badge/🚀_Get_Started-Install-22C55E?style=flat)](#-installation)
 [![Release v4.0.3](https://img.shields.io/badge/📦_Release-v4.0.3-8B5CF6?style=flat)](Releases/v4.0.3/)
-[![Contributors](https://img.shields.io/github/contributors/openpai/Personal_AI_Infrastructure?style=flat&logo=githubsponsors&logoColor=white&label=Contributors&color=EC4899)](https://github.com/openpai/Personal_AI_Infrastructure/graphs/contributors)
+[![Contributors](https://img.shields.io/github/contributors/BishopCodes/OpenPAI?style=flat&logo=githubsponsors&logoColor=white&label=Contributors&color=EC4899)](https://github.com/BishopCodes/OpenPAI/graphs/contributors)
 
 <!-- Tech Stack -->
 [![Built with OpenCode](https://img.shields.io/badge/Built_with-OpenCode-22C55E?style=flat&logo=data:image/svg+xml;base64,&logoColor=white)](https://opencode.ai)
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Bun](https://img.shields.io/badge/Bun-000000?style=flat&logo=bun&logoColor=white)](https://bun.sh)
-[![Community](https://img.shields.io/badge/Community-5865F2?style=flat&logo=discord&logoColor=white)](https://openpai.com/upgrade)
+[![Community](https://img.shields.io/badge/Community-5865F2?style=flat&logo=discord&logoColor=white)](https://github.com/BishopCodes/OpenPAI/discussions)
 
 <br/>
 
@@ -58,7 +58,7 @@
 
 [![PAI Overview Video](https://img.youtube.com/vi/Le0DLrn7ta0/maxresdefault.jpg)](https://youtu.be/Le0DLrn7ta0)
 
-**[Watch the full PAI walkthrough](https://youtu.be/Le0DLrn7ta0)** | **[Read: The Real Internet of Things](https://openpai.com/blog/real-internet-of-things)**
+**[Watch the full PAI walkthrough](https://youtu.be/Le0DLrn7ta0)** | **[Read: The Real Internet of Things](https://danielmiessler.com/blog/real-internet-of-things)**
 
 ---
 
@@ -92,7 +92,7 @@ Same skills, same agents, same philosophy — zero paid API dependencies for cor
 
 ## The Purpose of This Project
 
-**PAI exists to solve what I believe is the [P0 problem](https://openpai.com/telos) in the world:**
+**PAI exists to solve what I believe is the [P0 problem](https://danielmiessler.com/blog/telos) in the world:**
 
 ### Only a tiny fraction of humanity's creative potential is activated on Earth.
 
@@ -194,7 +194,7 @@ Most agentic systems are built around tools with the user being an afterthought.
 
 ## The PAI Principles
 
-These principles guide how OpenPAI systems are designed and built. **[Full breakdown →](https://openpai.com/blog/personal-ai-infrastructure)**
+These principles guide how OpenPAI systems are designed and built. **[Full breakdown →](https://danielmiessler.com/blog/personal-ai-infrastructure)**
 
 | # | Principle | Summary |
 |---|-----------|---------|
@@ -235,7 +235,7 @@ These primitives work together to create the experience of working with a system
 
 ### Assistant vs. Agent-Based AI Interaction
 
-PAI treats AI as a [persistent assistant, friend, coach, and mentor](https://openpai.com/blog/personal-ai-maturity-model) rather than a stateless agent that runs tasks. An assistant knows your goals, remembers your preferences, and improves over time. An agent executes commands and forgets.
+PAI treats AI as a [persistent assistant, friend, coach, and mentor](https://danielmiessler.com/blog/personal-ai-maturity-model) rather than a stateless agent that runs tasks. An assistant knows your goals, remembers your preferences, and improves over time. An agent executes commands and forgets.
 
 ---
 
@@ -358,8 +358,8 @@ Rich tab titles and pane management. Dynamic status lines show learning signals,
 
 ```bash
 # Clone the repo
-git clone https://github.com/openpai/Personal_AI_Infrastructure.git
-cd Personal_AI_Infrastructure/Releases/v4.0.3
+git clone https://github.com/BishopCodes/OpenPAI.git
+cd OpenPAI/Releases/v4.0.3
 
 # Copy the release and run the installer
 cp -r .opencode ~/ && cd ~/.opencode && bash install.sh
@@ -381,8 +381,8 @@ cp -r .opencode ~/ && cd ~/.opencode && bash install.sh
 cp -r ~/.opencode ~/.opencode-backup-$(date +%Y%m%d)
 
 # 2. Clone and copy the new release over your installation
-git clone https://github.com/openpai/Personal_AI_Infrastructure.git
-cd Personal_AI_Infrastructure/Releases/v4.0.3
+git clone https://github.com/BishopCodes/OpenPAI.git
+cd OpenPAI/Releases/v4.0.3
 cp -r .opencode ~/
 
 # 3. Run the installer (detects existing installation, preserves your data)
@@ -465,21 +465,21 @@ Recovery is straightforward:
 
 ## 🌐 Community
 
-**GitHub Discussions:** [Join the conversation](https://github.com/openpai/Personal_AI_Infrastructure/discussions)
+**GitHub Discussions:** [Join the conversation](https://github.com/BishopCodes/OpenPAI/discussions)
 
-**Community Discord:** OpenPAI is discussed in the [community Discord](https://openpai.com/upgrade) along with other AI projects
+**Community Discord:** OpenPAI is discussed in the [GitHub Discussions](https://github.com/BishopCodes/OpenPAI/discussions) along with other AI projects
 
-**Twitter/X:** [@openpai](https://twitter.com/openpai)
+**Twitter/X:** [@BishopCodes](https://github.com/BishopCodes)
 
-**Blog:** [openpai.com](https://openpai.com)
+**Blog:** [danielmiessler.com](https://danielmiessler.com)
 
 ### Star History
 
-<a href="https://star-history.com/#openpai/Personal_AI_Infrastructure&Date">
+<a href="https://star-history.com/#BishopCodes/OpenPAI&Date">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=openpai/Personal_AI_Infrastructure&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=openpai/Personal_AI_Infrastructure&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=openpai/Personal_AI_Infrastructure&type=Date" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=BishopCodes/OpenPAI&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=BishopCodes/OpenPAI&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=BishopCodes/OpenPAI&type=Date" />
  </picture>
 </a>
 
@@ -487,7 +487,7 @@ Recovery is straightforward:
 
 ## 🤝 Contributing
 
-We welcome contributions! See our [GitHub Issues](https://github.com/openpai/Personal_AI_Infrastructure/issues) for open tasks.
+We welcome contributions! See our [GitHub Issues](https://github.com/BishopCodes/OpenPAI/issues) for open tasks.
 
 1. **Fork the repository**
 2. **Make your changes** — Bug fixes, new skills, documentation improvements
@@ -524,9 +524,9 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 <div align="center">
 
-<a href="https://github.com/sponsors/openpai"><img src="https://img.shields.io/badge/Sponsor-❤️-EA4AAA?style=for-the-badge&logo=github-sponsors&logoColor=white" alt="Sponsor"></a>
+<a href="https://github.com/sponsors/BishopCodes"><img src="https://img.shields.io/badge/Sponsor-❤️-EA4AAA?style=for-the-badge&logo=github-sponsors&logoColor=white" alt="Sponsor"></a>
 
-**OpenPAI is free and open-source forever. If you find it valuable, you can [sponsor the project](https://github.com/sponsors/openpai).**
+**OpenPAI is free and open-source forever. If you find it valuable, you can [sponsor the project](https://github.com/sponsors/BishopCodes).**
 
 </div>
 
@@ -534,9 +534,9 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 ## 📚 Related Reading
 
-- [The Real Internet of Things](https://openpai.com/blog/real-internet-of-things) — The vision behind PAI
-- [AI's Predictable Path: 7 Components](https://openpai.com/blog/ai-predictable-path-7-components-2024) — Visual walkthrough of where AI is heading
-- [Building a Personal AI Infrastructure](https://openpai.com/blog/personal-ai-infrastructure) — Full PAI walkthrough with examples
+- [The Real Internet of Things](https://danielmiessler.com/blog/real-internet-of-things) — The vision behind PAI
+- [AI's Predictable Path: 7 Components](https://danielmiessler.com/blog/ai-predictable-path-7-components-2024) — Visual walkthrough of where AI is heading
+- [Building a Personal AI Infrastructure](https://danielmiessler.com/blog/personal-ai-infrastructure) — Full PAI walkthrough with examples
 
 ---
 
