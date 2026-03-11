@@ -1,9 +1,9 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./images/pai-logo-v7.png">
-  <source media="(prefers-color-scheme: light)" srcset="./images/pai-logo-v7.png">
-  <img alt="PAI Logo" src="./images/pai-logo-v7.png" width="300">
+  <source media="(prefers-color-scheme: dark)" srcset="./images/openpai-logo-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./images/openpai-logo.svg">
+  <img alt="OpenPAI Logo" src="./images/openpai-logo.svg" width="360">
 </picture>
 
 <br/>
