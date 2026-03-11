@@ -70,34 +70,6 @@ if (result.success) {
 
 ---
 
-## RemoveBg.ts - Remove Image Backgrounds
-
-**Location:** `~/.config/openpai/PAI/Tools/RemoveBg.ts`
-
-Remove backgrounds from images using the remove.bg API.
-
-**Usage:**
-```bash
-# Remove background from single image (overwrites original)
-bun ~/.config/openpai/PAI/Tools/RemoveBg.ts /path/to/image.png
-
-# Remove background and save to different path
-bun ~/.config/openpai/PAI/Tools/RemoveBg.ts /path/to/input.png /path/to/output.png
-
-# Process multiple images
-bun ~/.config/openpai/PAI/Tools/RemoveBg.ts image1.png image2.png image3.png
-```
-
-**Environment Variables:**
-- `REMOVEBG_API_KEY` - Required for background removal (from `${PAI_DIR}/.env`)
-
-**When to Use:**
-- "remove background from this image"
-- "remove the background"
-- "make this image transparent"
-
----
-
 ## AddBg.ts - Add Background Color
 
 **Location:** `~/.config/openpai/PAI/Tools/AddBg.ts`
@@ -351,11 +323,10 @@ brew install trufflehog
 ## Integration with Other Skills
 
 ### Art Skill
-- Background removal: `RemoveBg.ts`
 - Add backgrounds: `AddBg.ts`
 
 ### Blogging Skill
-- Image optimization: `RemoveBg.ts`, `AddBg.ts`
+- Image optimization: `AddBg.ts`
 - Social preview thumbnails
 
 ### Research Skill
@@ -397,7 +368,7 @@ When adding a new utility tool to this system:
 
 The following skills have been consolidated into this Tools system:
 
-- **Images** → `Tools/RemoveBg.ts`, `Tools/AddBg.ts` (2024-12-22)
+- **Images** → `Tools/AddBg.ts` (2024-12-22)
 - **VideoTranscript** → `Tools/GetTranscript.ts` (2024-12-22)
 - **VoiceNarration** → Voice server API (2024-12-22)
 - **ExtractTranscript** → `Tools/extract-transcript.py`, `Tools/ExtractTranscript.ts` (2024-12-22)

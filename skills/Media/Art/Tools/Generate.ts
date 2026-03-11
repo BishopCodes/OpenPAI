@@ -72,7 +72,6 @@ interface CLIArgs {
   aspectRatio?: ReplicateSize; // For Gemini models
   transparent?: boolean; // Enable transparent background
   referenceImages?: string[]; // Reference image paths (Nano Banana Pro only) - up to 14 total
-  removeBg?: boolean; // Remove background after generation using remove.bg API
   addBg?: string; // Add background color (hex) to transparent image
   thumbnail?: boolean; // Generate additional thumbnail with #EAE9DF background for social previews
 }
@@ -216,14 +215,12 @@ OPTIONS:
                              Accepts: PNG, JPEG, WebP images
                              API Limits: Up to 5 human refs, 6 object refs, 14 total max
   --transparent              Enable transparent background (adds transparency instructions to prompt)
-                             Note: Not all models support transparency natively; may require post-processing
-  --remove-bg                Remove background after generation using remove.bg API
-                             Creates true transparency by removing the generated background
+                              Note: Not all models support transparency natively; may require post-processing
   --add-bg <hex>             Add background color to a transparent image (e.g., "#EAE9DF")
-                             Useful for creating thumbnails/social previews from transparent images
+                              Useful for creating thumbnails/social previews from transparent images
   --thumbnail                Generate BOTH transparent AND thumbnail versions for blog headers
-                             Creates: output.png (transparent) + output-thumb.png (#EAE9DF background)
-                             Automatically enables --remove-bg
+                              Creates: output.png (transparent) + output-thumb.png (#EAE9DF background)
+                              Automatically enables --transparent
   --creative-variations <n>  Generate N variations (appends -v1, -v2, etc. to output filename)
                              Use with the be-creative skill for true prompt diversity
                              CLI mode: generates N images with same prompt (tests model variability)
@@ -270,7 +267,6 @@ ENVIRONMENT VARIABLES:
   REPLICATE_API_TOKEN  Required for flux and nano-banana models
   OPENAI_API_KEY       Required for gpt-image-1 model
   GOOGLE_API_KEY       Required for nano-banana-pro model
-  REMOVEBG_API_KEY     Required for --remove-bg flag
 
 ERROR CODES:
   0  Success
@@ -318,13 +314,9 @@ function parseArgs(argv: string[]): CLIArgs {
       parsed.transparent = true;
       continue;
     }
-    if (key === "remove-bg") {
-      parsed.removeBg = true;
-      continue;
-    }
     if (key === "thumbnail") {
       parsed.thumbnail = true;
-      parsed.removeBg = true; // Thumbnail mode requires remove-bg
+      parsed.transparent = true; // Thumbnail mode requires transparent
       continue;
     }
 
@@ -489,41 +481,6 @@ async function addBackgroundColor(inputPath: string, outputPath: string, hexColo
     throw new CLIError(`Failed to add background color: ${error instanceof Error ? error.message : String(error)}`);
   }
 }
-
-async function removeBackground(imagePath: string): Promise<void> {
-  const apiKey = process.env.REMOVEBG_API_KEY;
-  if (!apiKey) {
-    throw new CLIError("Missing environment variable: REMOVEBG_API_KEY");
-  }
-
-  console.log("🔲 Removing background with remove.bg API...");
-
-  const imageBuffer = await readFile(imagePath);
-  const formData = new FormData();
-  formData.append("image_file", new Blob([imageBuffer]), "image.png");
-  formData.append("size", "auto");
-
-  const response = await fetch("https://api.remove.bg/v1.0/removebg", {
-    method: "POST",
-    headers: {
-      "X-Api-Key": apiKey,
-    },
-    body: formData,
-  });
-
-  if (!response.ok) {
-    const errorText = await response.text();
-    throw new CLIError(`remove.bg API error: ${response.status} - ${errorText}`);
-  }
-
-  const resultBuffer = Buffer.from(await response.arrayBuffer());
-  await writeFile(imagePath, resultBuffer);
-  console.log("✅ Background removed successfully");
-}
-
-// ============================================================================
-// Image Generation
-// ============================================================================
 
 async function generateWithFlux(prompt: string, size: ReplicateSize, output: string): Promise<string> {
   const token = process.env.REPLICATE_API_TOKEN;
@@ -757,11 +714,6 @@ async function main(): Promise<void> {
       );
     } else if (args.model === "gpt-image-1") {
       actualOutput = await generateWithGPTImage(finalPrompt, args.size as OpenAISize, args.output);
-    }
-
-    // Remove background if requested (use actual output path)
-    if (args.removeBg) {
-      await removeBackground(actualOutput);
     }
 
     // Add background color if requested (standalone mode)

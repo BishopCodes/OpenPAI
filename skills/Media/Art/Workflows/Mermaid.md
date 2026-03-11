@@ -666,13 +666,11 @@ ONE-OFF / QUICK PREVIEW: Keep white background (#FFFFFF)
 GOING INTO BLOG/WEBSITE: Remove background for transparency
 ```
 
-**For blog/website use** — use the **Images skill** for background removal:
+**For blog/website use** — use the `--transparent` flag during generation for transparency:
 
 ```bash
-bun ~/.config/openpai/PAI/Tools/RemoveBg.ts /path/to/mermaid-diagram.png
+bun ~/.config/openpai/skills/Media/Art/Tools/Generate.ts --transparent --prompt "..." --output /path/to/mermaid-diagram.png
 ```
-
-**See:** `~/.config/openpai/skills/Images/Workflows/BackgroundRemoval.md` for full documentation.
 
 **Immediately open:**
 ```bash

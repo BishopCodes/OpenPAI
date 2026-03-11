@@ -198,7 +198,7 @@ All the art components, labels, and such should mostly look hand-drawn, similar 
 | User Says | Flag | Effect |
 |-----------|------|--------|
 | "blog", "website" | `--thumbnail` | Creates transparent + thumb versions |
-| "transparent" | `--remove-bg` | Removes background for compositing |
+| "transparent" | `--transparent` | Generates with transparent background |
 | "variations", "options" | `--creative-variations 3` | Multiple versions |
 
 ### Generate Command

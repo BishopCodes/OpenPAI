@@ -7,8 +7,8 @@
  *
  * Usage:
  *   pai                  Launch OpenCode (default profile)
- *   pai -m bd            Launch with Bright Data MCP
- *   pai -m bd,ap         Launch with multiple MCPs
+ *   pai -m chrome         Launch with Chrome MCP
+ *   pai -m chrome,stripe  Launch with multiple MCPs
  *   pai -r / --resume    Resume last session
  *   pai --local          Stay in current directory (don't cd to ~/.config/openpai)
  *   pai update           Update OpenCode
@@ -38,10 +38,6 @@ const WALLPAPER_DIR = join(homedir(), "Projects", "Wallpaper");
 
 // MCP shorthand mappings
 const MCP_SHORTCUTS: Record<string, string> = {
-  bd: "Brightdata-MCP.json",
-  brightdata: "Brightdata-MCP.json",
-  ap: "Apify-MCP.json",
-  apify: "Apify-MCP.json",
   cu: "ClickUp-MCP.json",
   clickup: "ClickUp-MCP.json",
   chrome: "chrome-enabled.mcp.json",
@@ -62,7 +58,7 @@ const PROFILE_DESCRIPTIONS: Record<string, string> = {
   "chrome-enabled": "Essential + Chrome DevTools",
   "dev-work": "Development tools (Shadcn, Codex, Supabase)",
   security: "Security tools (httpx, naabu)",
-  research: "Research tools (Brightdata, Apify, Chrome)",
+  research: "Research tools (WebFetch, Playwright, Chrome)",
   clickup: "Official ClickUp MCP (tasks, time tracking, docs)",
   full: "All available MCPs",
 };
@@ -464,7 +460,7 @@ async function cmdUpdate() {
 
   // Step 2: Update OpenCode
   log("Step 2/2: Installing latest OpenCode...", "🤖");
-  const openCodeResult = spawnSync(["bash", "-c", "curl -fsSL https://claude.ai/install.sh | bash"]);
+  const openCodeResult = spawnSync(["bash", "-c", "curl -fsSL https://opencode.ai/install | bash"]);
   if (openCodeResult.exitCode !== 0) {
     error("OpenCode installation failed");
   }
@@ -546,9 +542,8 @@ function cmdMcpList() {
 
   console.log();
   log("Examples:", "💡");
-  console.log("  k -m bd          # Bright Data only");
-  console.log("  k -m bd,ap       # Bright Data + Apify");
   console.log("  k mcp set research  # Full research profile");
+  console.log("  k mcp set security  # Security tools profile");
 }
 
 async function cmdPrompt(prompt: string) {
@@ -589,21 +584,19 @@ COMMANDS:
   k help, -h               Show this help
 
 MCP SHORTCUTS:
-  bd, brightdata           Bright Data scraping
-  ap, apify                Apify automation
   cu, clickup              Official ClickUp (tasks, time tracking, docs)
   chrome                   Chrome DevTools
   dev                      Development tools
   sec, security            Security tools
-  research                 Research tools (BD + Apify + Chrome)
+  research                 Research tools (Chrome)
   full                     All MCPs
   min, minimal             Essential MCPs only
   none                     No MCPs
 
 EXAMPLES:
   k                        Start with current profile
-  k -m bd                  Start with Bright Data
-  k -m bd,ap,chrome        Start with multiple MCPs
+  k -m chrome              Start with Chrome MCP
+  k -m chrome,stripe       Start with multiple MCPs
   k -r                     Resume last session
   k mcp set research       Switch to research profile
   k update                 Update OpenCode

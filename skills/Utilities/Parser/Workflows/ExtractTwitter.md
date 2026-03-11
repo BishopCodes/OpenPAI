@@ -32,7 +32,7 @@ Running the **ExtractTwitter** workflow in the **Parser** skill to parse tweets.
 - Include reply context if relevant
 
 **API alternatives (if Twitter API unavailable):**
-- Use Bright Data Twitter scraper (via mcp skill)
+- Use Playwright browser automation to scrape tweets
 - Scrape page HTML directly
 - Use third-party Twitter API alternatives
 - Try nitter instances as fallback

@@ -368,7 +368,7 @@ If you found one username, try variations:
 | Hunter.io | $49+/mo | Verification + discovery |
 | FullContact | Enterprise | Identity enrichment |
 
-### Use Apify MCP for social scraping automation
+### Use Playwright browser automation for social scraping
 
 ---
 

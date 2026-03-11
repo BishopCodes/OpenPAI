@@ -89,7 +89,7 @@ for url in "${urls[@]}"; do
 done > batch-content.txt
 ```
 
-**Option B: Firecrawl (Better Quality)**
+**Option B: WebFetch (Better Quality)**
 ```typescript
 import { WebFetch } from '@tool/webfetch';
 
@@ -99,21 +99,6 @@ const contents = await Promise.all(
     return {
       url,
       content
-    };
-  })
-);
-```
-
-**Option C: Bright Data (Production)**
-```typescript
-import { scrapeAsMarkdown } from '~/.config/openpai/skills/mcp/Providers/brightdata/actors';
-
-const contents = await Promise.all(
-  urls.map(async (url) => {
-    const markdown = await scrapeAsMarkdown(url);
-    return {
-      url,
-      markdown
     };
   })
 );

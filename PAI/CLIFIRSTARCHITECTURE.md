@@ -250,7 +250,7 @@ tool run --model opus        # Use powerful/expensive model
 
 # Post-processing flags
 tool generate --thumbnail    # Generate additional thumbnail version
-tool generate --remove-bg    # Remove background after generation
+tool generate --transparent  # Enable transparent background
 tool process --no-cache      # Bypass cache, force fresh execution
 ```
 
@@ -294,7 +294,7 @@ The gap in many systems: CLI tools have rich configuration options, but workflow
 | User Says | Flag | Effect |
 |-----------|------|--------|
 | "blog header" | `--thumbnail` | Creates both transparent + thumb versions |
-| "transparent background" | `--remove-bg` | Removes background after generation |
+| "transparent background" | `--transparent` | Generates with transparent background |
 | "with reference" | `--reference-image <path>` | Style guidance from image |
 
 ## Workflow Command Construction
@@ -308,7 +308,7 @@ bun run Generate.ts \
   --size [SIZE] \
   --aspect-ratio [RATIO] \
   [--thumbnail if blog header] \
-  [--remove-bg if transparency needed] \
+  [--transparent if transparency needed] \
   --output [PATH]
 \`\`\`
 ```

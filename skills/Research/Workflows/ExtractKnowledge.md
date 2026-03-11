@@ -32,8 +32,7 @@ fabric --youtube "<url>"
 ```bash
 # Try fabric first
 fabric -u "<url>"
-# If that fails, use Bright Data MCP
-mcp__brightdata__scrape_as_markdown url="<url>"
+# If that fails, use Playwright browser automation to render and extract content
 ```
 
 **PDFs and Files**:

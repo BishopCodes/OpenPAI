@@ -1,6 +1,6 @@
 ---
 name: Art
-description: Generate illustrations, technical diagrams, mermaid flowcharts, infographics, header images, thumbnails, comics, and PAI pack icons using multiple rendering backends. USE WHEN art, header images, visualizations, mermaid, flowchart, technical diagram, infographic, PAI icon, pack icon, YouTube thumbnails, ad hoc thumbnails, annotated screenshots, aphorisms, comics, comparisons, D3 dashboards, embossed logo wallpaper, essay illustration, frameworks, maps, recipe cards, remove background, stats, taxonomies, timelines, brand wallpaper, visualize, generate image, Midjourney, compose thumbnail, generate prompt.
+description: Generate illustrations, technical diagrams, mermaid flowcharts, infographics, header images, thumbnails, comics, and PAI pack icons using multiple rendering backends. USE WHEN art, header images, visualizations, mermaid, flowchart, technical diagram, infographic, PAI icon, pack icon, YouTube thumbnails, ad hoc thumbnails, annotated screenshots, aphorisms, comics, comparisons, D3 dashboards, embossed logo wallpaper, essay illustration, frameworks, maps, recipe cards, stats, taxonomies, timelines, brand wallpaper, visualize, generate image, compose thumbnail, generate prompt.
 ---
 
 # Art Skill
@@ -56,7 +56,6 @@ These override default behavior. If the directory does not exist, proceed with s
 
 Route to the appropriate workflow based on the request.
 
-  - Remove background from image → `Workflows/RemoveBackground.md`
   - Brand wallpaper with logo integration → `Workflows/BrandWallpaper.md`
   - YouTube thumbnail checklist → `Workflows/YouTubeThumbnailChecklist.md`
   - Blog header or editorial illustration → `Workflows/Essay.md`
@@ -210,7 +209,7 @@ User: "visualize humans vs AI decision-making"
 User: "create icon for the skill system pack"
 → Invokes CREATEPAIPACKICON workflow
 → Reads workflow from Workflows/CreatePAIPackIcon.md
-→ Generates 1K image with --remove-bg for transparency
+→ Generates 1K image with --transparent for transparency
 → Resizes to 256x256 RGBA PNG
 → Outputs to ~/Downloads/ for preview
 → After approval, copies to ${PROJECTS_DIR}/PAI/Packs/icons/

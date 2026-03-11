@@ -114,8 +114,8 @@ Route to the appropriate workflow based on the request.
 ### Uses
 - **be-creative** - deep thinking for extract alpha
 - **OSINT** - MANDATORY for company/people comprehensive research
-- **BrightData MCP** - CAPTCHA solving, advanced scraping
-- **Apify MCP** - RAG browser, specialized site scrapers
+- **WebFetch** - HTTP content retrieval
+- **Playwright** - Browser automation for dynamic pages
 
 ---
 

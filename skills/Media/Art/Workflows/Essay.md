@@ -420,7 +420,7 @@ Before generating, verify:
 | User Says | Flag | Effect |
 |-----------|------|--------|
 | "blog header" (default) | `--thumbnail` | Creates transparent + thumb versions |
-| "transparent only" | `--remove-bg` | Just removes background |
+| "transparent only" | `--transparent` | Generates with transparent background |
 | "with reference", "style like" | `--reference-image <path>` | Uses reference for style guidance |
 | "variations", "options" | `--creative-variations 3` | Generates multiple versions |
 
@@ -507,19 +507,14 @@ thumbnail: https://example.com/images/my-header.png
 | `output.png` | Transparent | Inline blog image (composites over page background) |
 | `output-thumb.png` | Sepia #EAE9DF | `thumbnail:` frontmatter, social previews, OpenGraph |
 
-### Alternative: Standalone Background Removal
+### Alternative: Transparent Background
 
-For non-blog images that only need transparency, or to remove backgrounds after generation:
+For non-blog images that only need transparency, use the `--transparent` flag during generation:
 
 ```bash
-# Use the Images Skill for background removal
-bun ~/.config/openpai/PAI/Tools/RemoveBg.ts /path/to/output.png
-
-# Or batch process multiple images
-bun ~/.config/openpai/PAI/Tools/RemoveBg.ts image1.png image2.png image3.png
+# Generate with transparent background
+bun ~/.config/openpai/skills/Media/Art/Tools/Generate.ts --transparent --prompt "..." --output /path/to/output.png
 ```
-
-**See:** `~/.config/openpai/skills/Images/Workflows/BackgroundRemoval.md` for full documentation.
 
 ### 🚨 COMPOSITION: USE FULL FRAME, MINIMALIST, NO BACKGROUNDS
 
@@ -548,8 +543,8 @@ bun ~/.config/openpai/PAI/Tools/RemoveBg.ts image1.png image2.png image3.png
 
 | Model | Command | When to Use |
 |-------|---------|-------------|
-| **flux** | `--model flux --size 1:1 --remove-bg` | Maximum quality, more detail |
-| **gpt-image-1** | `--model gpt-image-1 --size 1024x1024 --remove-bg` | Different interpretation |
+| **flux** | `--model flux --size 1:1 --transparent` | Maximum quality, more detail |
+| **gpt-image-1** | `--model gpt-image-1 --size 1024x1024 --transparent` | Different interpretation |
 
 ### Immediately Open
 
@@ -784,7 +779,7 @@ open /path/to/generated-image.png
 - [ ] Could be concept art for a Villeneuve film
 - [ ] Distinctive — NOT generic AI illustration
 - [ ] Sophisticated — rewards closer looking
-- [ ] **Transparent background** — used `--remove-bg` flag
+- [ ] **Transparent background** — used `--transparent` flag
 
 ### If Validation Fails
 

@@ -1,6 +1,6 @@
 # Web Scraping Workflow
 
-Web scraping and crawling using WebFetch for simple pages, BrightData MCP for CAPTCHA/blocking, and Apify MCP for social media. Includes HTML parsing, rate limiting, and best practices for ethical scraping.
+Web scraping and crawling using WebFetch for simple pages and Playwright for dynamic/JavaScript-rendered content. Includes HTML parsing, rate limiting, and best practices for ethical scraping.
 
 ## 🎯 Load Full PAI Context
 
@@ -27,8 +27,8 @@ This provides access to:
 ## Decision Tree
 
 1. **Simple pages?** → Use WebFetch first
-2. **CAPTCHA/blocking?** → Use BrightData MCP (`mcp__brightdata__*`)
-3. **Social media?** → Use Apify MCP
+2. **CAPTCHA/blocking?** → Use Playwright browser automation
+3. **Social media?** → Use platform-specific APIs or Playwright
 
 ## Common Tasks
 
@@ -38,7 +38,7 @@ This provides access to:
 3. Extract href attributes
 
 ### Scrape Product Listings
-1. Use appropriate tool (WebFetch or BrightData)
+1. Use appropriate tool (WebFetch or Playwright)
 2. Parse HTML for product containers
 3. Extract data (title, price, image, etc.)
 

@@ -908,7 +908,7 @@ This pattern (inspired by indydevdan's variable-centric approach) enables workfl
 | **Mode flags** | `--fast`, `--thorough`, `--dry-run` | Execution behavior |
 | **Output flags** | `--format json`, `--quiet`, `--verbose` | Output control |
 | **Resource flags** | `--model haiku`, `--model opus` | Model/resource selection |
-| **Post-process flags** | `--thumbnail`, `--remove-bg` | Additional processing |
+| **Post-process flags** | `--thumbnail`, `--transparent` | Additional processing |
 
 **Example: Well-Configured Tool**
 
@@ -923,7 +923,6 @@ bun Generate.ts \
   --size 2K \                  # Output configuration
   --aspect-ratio 16:9 \
   --thumbnail \                # Post-processing
-  --remove-bg \
   --output /tmp/header.png
 ```
 

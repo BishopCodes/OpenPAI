@@ -343,7 +343,7 @@ The `llcli` CLI (Limitless.ai API) proves this pattern works:
 ## 🔗 RELATED SKILLS
 
 - **development** - For complex feature development (not CLI-specific)
-- **mcp** - For web scraping CLIs (Bright Data, Apify wrappers)
+- **mcp** - For web scraping CLIs (WebFetch, Playwright)
 - **lifelog** - Example of skill using llcli
 
 ---

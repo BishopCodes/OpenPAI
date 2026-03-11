@@ -96,7 +96,7 @@ bun run ~/.config/openpai/skills/Media/Art/Tools/Generate.ts \
   --prompt "[YOUR_PROMPT]" \
   --size 1K \
   --aspect-ratio 1:1 \
-  --remove-bg \
+  --transparent \
   --output ${PROJECTS_DIR}/PAI/Packs/icons/[PACK_NAME].png
 ```
 
@@ -104,7 +104,7 @@ bun run ~/.config/openpai/skills/Media/Art/Tools/Generate.ts \
 - `--model nano-banana-pro` - Best quality for icons
 - `--size 1K` - Small file, fast generation
 - `--aspect-ratio 1:1` - Square for icons
-- `--remove-bg` - Creates actual transparency
+- `--transparent` - Creates actual transparency
 
 ### Step 4: Verify Output
 
@@ -137,7 +137,7 @@ bun run ~/.config/openpai/skills/Media/Art/Tools/Generate.ts \
   --prompt "A stylized hook or fishing hook shape representing event plugins in software, simple flat icon design, 256x256 pixels. COLOR PALETTE: Primary electric blue (#4a90d9), Accent purple (#8b5cf6) sparingly. STYLE: Modern flat icon, simple enough to read at 64x64, no text, centered. BACKGROUND: Dark (#0a0a0f)." \
   --size 1K \
   --aspect-ratio 1:1 \
-  --remove-bg \
+  --transparent \
   --output ${PROJECTS_DIR}/PAI/Packs/icons/pai-plugin-system.png
 ```
 
@@ -149,7 +149,7 @@ bun run ~/.config/openpai/skills/Media/Art/Tools/Generate.ts \
   --prompt "A download arrow pointing into a foundation/base structure representing core installation, simple flat icon design, 256x256 pixels. COLOR PALETTE: Primary electric blue (#4a90d9), Accent purple (#8b5cf6) sparingly. STYLE: Modern flat icon, simple enough to read at 64x64, no text, centered. BACKGROUND: Dark (#0a0a0f)." \
   --size 1K \
   --aspect-ratio 1:1 \
-  --remove-bg \
+  --transparent \
   --output ${PROJECTS_DIR}/PAI/Packs/icons/pai-core-install.png
 ```
 
@@ -161,7 +161,7 @@ bun run ~/.config/openpai/skills/Media/Art/Tools/Generate.ts \
   --prompt "A brain with memory/data flowing in and out representing an AI memory system, simple flat icon design, 256x256 pixels. COLOR PALETTE: Primary electric blue (#4a90d9), Accent purple (#8b5cf6) sparingly. STYLE: Modern flat icon, simple enough to read at 64x64, no text, centered. BACKGROUND: Dark (#0a0a0f)." \
   --size 1K \
   --aspect-ratio 1:1 \
-  --remove-bg \
+  --transparent \
   --output ${PROJECTS_DIR}/PAI/Packs/icons/pai-memory-system.png
 ```
 

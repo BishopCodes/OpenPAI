@@ -95,13 +95,11 @@ TRANSPARENT: Use Images skill to remove background for overlay use
 
 **Light Cream (#F5E6D3) is the DEFAULT background.** Only use white (#FFFFFF) if the user explicitly requests it.
 
-**For transparent background** — use the **Images skill** for background removal:
+**For transparent background** — use the `--transparent` flag during generation:
 
 ```bash
-bun ~/.config/openpai/PAI/Tools/RemoveBg.ts /path/to/visualization.png
+bun ~/.config/openpai/skills/Media/Art/Tools/Generate.ts --transparent --prompt "..." --output /path/to/visualization.png
 ```
-
-**See:** `~/.config/openpai/skills/Images/Workflows/BackgroundRemoval.md` for full documentation.
 
 ### Title/Subtitle Alignment
 

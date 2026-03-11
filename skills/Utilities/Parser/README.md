@@ -220,7 +220,7 @@ Task(
 - [ ] Implement actual Gemini integration
 - [ ] Implement Fabric integration for YouTube
 - [ ] Add PDF extraction (PyPDF2, pdftotext)
-- [ ] Add Twitter scraping (Bright Data MCP)
+- [ ] Add Twitter scraping (Playwright browser automation)
 - [ ] Database import utilities
 - [ ] Multi-item mode for newsletters
 - [ ] Deduplication detection

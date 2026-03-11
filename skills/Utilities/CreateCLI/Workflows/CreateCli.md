@@ -245,7 +245,7 @@ This enables workflows and users to adapt CLI behavior without code changes.
 | **Mode flags** | `--fast`, `--thorough`, `--dry-run` | Execution behavior |
 | **Output flags** | `--format json`, `--quiet`, `--verbose` | Output control |
 | **Resource flags** | `--model haiku`, `--model opus` | Model/resource selection |
-| **Post-process flags** | `--thumbnail`, `--remove-bg` | Additional processing |
+| **Post-process flags** | `--thumbnail`, `--transparent` | Additional processing |
 
 **Design Checklist:**
 1. What execution modes does this CLI need? (fast vs thorough, dry-run)
