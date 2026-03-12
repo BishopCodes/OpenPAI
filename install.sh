@@ -134,7 +134,7 @@ else
   warn "OpenCode not found — installing..."
   curl -fsSL https://opencode.ai/install | bash 2>/dev/null
 
-  export PATH="$HOME/.local/bin:$PATH"
+  export PATH="$HOME/.opencode/bin:$HOME/.local/bin:$PATH"
 
   if command -v opencode &>/dev/null; then
     success "OpenCode installed"

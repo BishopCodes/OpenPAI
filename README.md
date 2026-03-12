@@ -63,9 +63,7 @@ Everything else — the skill system, memory architecture, TELOS framework, agen
 ```bash
 git clone https://github.com/BishopCodes/OpenPAI.git
 cd OpenPAI
-
-# Copy the release and run the installer
-cp -r .opencode ~/ && cd ~/.opencode && bash install.sh
+bash install.sh
 ```
 
 The installer will:
@@ -80,17 +78,13 @@ After installation: `source ~/.zshrc && pai`
 
 ```bash
 # 1. Back up
-cp -r ~/.opencode ~/.opencode-backup-$(date +%Y%m%d)
+cp -r ~/.config/openpai ~/.config/openpai-backup-$(date +%Y%m%d)
 
-# 2. Clone and copy the new release
-git clone https://github.com/BishopCodes/OpenPAI.git
-cd OpenPAI
-cp -r .opencode ~/
+# 2. Pull latest and re-run the installer
+cd OpenPAI && git pull
+bash install.sh
 
-# 3. Run the installer (detects existing installation, preserves your data)
-cd ~/.opencode && bash install.sh
-
-# 4. Rebuild your AGENTS.md
+# 3. Rebuild your AGENTS.md
 bun ~/.config/openpai/PAI/Tools/BuildAGENTS.ts
 ```
 
