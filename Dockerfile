@@ -4,9 +4,9 @@
 #  Build:  docker build -t openpai .
 #  Run:    docker run -it --env-file .env.local openpai
 #
-#  Pass API keys via --env-file or -e flags:
-#    docker run -it -e ANTHROPIC_API_KEY=sk-... openpai
-#    docker run -it --env-file .env.local openpai
+#  Auth: OpenCode uses Copilot/OpenAI OAuth (cached in ~/.local/share/opencode/auth.json).
+#    Auth on host first, then mount the cache into the container:
+#    docker run -it -v ~/.local/share/opencode/auth.json:/root/.local/share/opencode/auth.json:ro openpai
 #
 #  Override to serve mode:
 #    docker run -p 4099:4099 --env-file .env.local openpai serve --hostname 0.0.0.0 --port 4099
