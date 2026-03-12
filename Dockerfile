@@ -11,7 +11,7 @@
 #  Override to serve mode:
 #    docker run -p 4099:4099 --env-file .env.local openpai serve --hostname 0.0.0.0 --port 4099
 # ═══════════════════════════════════════════════════════════
-FROM --platform=linux/amd64 fedora:latest
+FROM fedora:latest
 
 # ─── System dependencies ──────────────────────────────────
 RUN dnf install -y \
