@@ -381,7 +381,7 @@ switch (command) {
       };
 
       if (byType.settings.length > 0) {
-        console.log("Settings (can merge into new opencode.json):");
+        console.log("Settings (can merge into openpai.json):");
         byType.settings.forEach((c) => console.log(`  - ${c.description}`));
         console.log("");
       }

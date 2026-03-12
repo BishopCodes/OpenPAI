@@ -3,7 +3,7 @@
 /**
  * BuildAGENTS.ts — Generate AGENTS.md from template + settings
  *
- * Reads AGENTS.md.template, resolves variables from opencode.json
+ * Reads AGENTS.md.template, resolves variables from openpai.json
  * and PAI/Algorithm/LATEST, writes AGENTS.md.
  *
  * Called by:
@@ -18,7 +18,7 @@ import { join } from "path";
 const PAI_DIR = join(process.env.HOME!, ".config/openpai");
 const TEMPLATE_PATH = join(PAI_DIR, "AGENTS.md.template");
 const OUTPUT_PATH = join(PAI_DIR, "AGENTS.md");
-const SETTINGS_PATH = join(PAI_DIR, "opencode.json");
+const SETTINGS_PATH = join(PAI_DIR, "openpai.json");
 const ALGORITHM_DIR = join(PAI_DIR, "PAI/Algorithm");
 const LATEST_PATH = join(ALGORITHM_DIR, "LATEST");
 
@@ -32,7 +32,7 @@ function getAlgorithmVersion(): string {
   return readFileSync(LATEST_PATH, "utf-8").trim();
 }
 
-// ─── Load variables from opencode.json ───
+// ─── Load variables from openpai.json ───
 
 function loadVariables(): Record<string, string> {
   const settings = existsSync(SETTINGS_PATH)
@@ -42,12 +42,12 @@ function loadVariables(): Record<string, string> {
   const algoVersion = getAlgorithmVersion();
 
   return {
-    "{DAIDENTITY.NAME}": settings.daidentity?.name || "Assistant",
-    "{DAIDENTITY.FULLNAME}": settings.daidentity?.fullName || "Assistant",
-    "{DAIDENTITY.DISPLAYNAME}": settings.daidentity?.displayName || "Assistant",
-    "{PRINCIPAL.NAME}": settings.principal?.name || "User",
-    "{PRINCIPAL.TIMEZONE}": settings.principal?.timezone || "UTC",
-    "{{PAI_VERSION}}": settings.pai?.version || "4.0.3",
+    "{DAIDENTITY.NAME}": settings.openpai?.assistant?.name || "Assistant",
+    "{DAIDENTITY.FULLNAME}": settings.openpai?.assistant?.name || "Assistant",
+    "{DAIDENTITY.DISPLAYNAME}": settings.openpai?.assistant?.name || "Assistant",
+    "{PRINCIPAL.NAME}": settings.openpai?.principal?.name || "User",
+    "{PRINCIPAL.TIMEZONE}": settings.openpai?.principal?.timezone || "UTC",
+    "{{PAI_VERSION}}": settings.openpai?.version || "4.0.3",
     "{{ALGO_VERSION}}": algoVersion,
     "{{ALGO_PATH}}": `PAI/Algorithm/${algoVersion}.md`,
   };

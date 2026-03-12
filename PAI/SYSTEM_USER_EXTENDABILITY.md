@@ -77,7 +77,7 @@ Private skills use the `_ALLCAPS` prefix and are never synced to public PAI.
 ### Identity
 
 ```
-opencode.json                         # Base identity (name, voice)
+openpai.json                          # Base identity (name, voice)
 USER/DAIDENTITY.md                    # Personal identity expansion
 ```
 
@@ -89,7 +89,7 @@ Many configuration files follow this pattern implicitly:
 |----------------|---------------|
 | `patterns.example.yaml` | `USER/.../patterns.yaml` |
 | `RESPONSEFORMAT.md` | `USER/RESPONSEFORMAT.md` |
-| `opencode.json` defaults | `opencode.json` user values |
+| `opencode.jsonc` + `openpai.json` defaults | `opencode.jsonc` + `openpai.json` user values |
 
 ---
 
@@ -255,9 +255,9 @@ Check logs or add debugging to see active configuration source.
 
 Currently, no. USER replaces SYSTEM entirely for that component. If you only want to change one setting, you must copy the entire SYSTEM config and modify it.
 
-### Q: What about opencode.json?
+### Q: What about opencode.jsonc and openpai.json?
 
-`opencode.json` is a special case—it's a single file with both system and user values. It doesn't follow the two-file pattern but achieves similar results through its structure.
+`opencode.jsonc` and `openpai.json` are special cases — they're config files with both system and user values. They don't follow the two-file pattern but achieve similar results through their structure. `opencode.jsonc` handles OpenCode-specific settings (permissions, plugins, instructions, MCP servers); `openpai.json` handles PAI-specific settings (identity, env, notifications, counts).
 
 ---
 

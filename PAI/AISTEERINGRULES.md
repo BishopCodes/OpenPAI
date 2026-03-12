@@ -1,6 +1,6 @@
 # AI Steering Rules — System
 
-Universal behavioral rules for PAI. Force-loaded at session start via `opencode.json → loadAtStartup`.
+Universal behavioral rules for PAI. Force-loaded at session start via `opencode.jsonc → loadAtStartup`.
 Personal overrides in `USER/AISTEERINGRULES.md`.
 
 ---

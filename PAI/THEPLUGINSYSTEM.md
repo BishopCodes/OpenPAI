@@ -5,7 +5,7 @@
 **Event-Driven Automation Infrastructure**
 
 **Location:** `~/.config/openpai/plugins/`
-**Configuration:** `~/.config/openpai/opencode.json`
+**Configuration:** `~/.config/openpai/opencode.jsonc`
 **Status:** Active - 20 plugins running in production
 
 ---
@@ -348,11 +348,11 @@ Each Stop hook is a self-contained `.plugin.ts` file that reads stdin via shared
 ## Configuration
 
 ### Location
-**File:** `~/.config/openpai/opencode.json`
+**File:** `~/.config/openpai/opencode.jsonc`
 **Section:** `"plugins": { ... }`
 
 ### Environment Variables
-Plugins have access to all environment variables from `~/.config/openpai/opencode.json` `"env"` section:
+Plugins have access to all environment variables from `~/.config/openpai/openpai.json` `"env"` section:
 
 ```json
 {
@@ -369,7 +369,7 @@ Plugins have access to all environment variables from `~/.config/openpai/opencod
 
 ### Identity Configuration (Central to Install Wizard)
 
-**opencode.json is the single source of truth for all daidentity/configuration.**
+**openpai.json is the single source of truth for all daidentity/configuration.**
 
 ```json
 {
@@ -399,10 +399,10 @@ const principal = getPrincipal();  // { name, pronunciation, timezone }
 // Convenience functions
 const DA_NAME = getDAName();        // "PAI"
 const USER_NAME = getPrincipalName(); // "{YourName}"
-const VOICE_ID = getVoiceId();        // from opencode.json daidentity.voiceId
+const VOICE_ID = getVoiceId();        // from openpai.json daidentity.voiceId
 ```
 
-**Why opencode.json?**
+**Why openpai.json?**
 - Programmatic access via `JSON.parse()` - no regex parsing markdown
 - Central to the PAI install wizard
 - Single source of truth for all configuration
@@ -470,7 +470,7 @@ const payload = {
   title: identity.name,
   message: completionMessage,
   voice_enabled: true,
-  voice_id: identity.voiceId  // From opencode.json
+  voice_id: identity.voiceId  // From openpai.json
 };
 
 await fetch('http://localhost:8888/notify', {
@@ -481,7 +481,7 @@ await fetch('http://localhost:8888/notify', {
 ```
 
 **Agent-Specific Voices:**
-Configure voice IDs via `opencode.json` daidentity section or environment variables.
+Configure voice IDs via `openpai.json` daidentity section or environment variables.
 Each agent can have a unique Kokoro voice configured. See the Agents skill for voice registry.
 
 ---
@@ -702,7 +702,7 @@ main();
 chmod +x ~/.config/openpai/plugins/my-custom-plugin.ts
 ```
 
-### Step 4: Add to opencode.json
+### Step 4: Add to opencode.jsonc
 ```json
 {
   "plugins": {
@@ -769,8 +769,8 @@ await Promise.race([readPromise, timeoutPromise]);
 - Use PST timestamps for consistency
 
 ### 6. **Environment Access**
-- All `opencode.json` env vars available via `process.env`
-- Use `${PAI_DIR}` in opencode.json for portability
+- All `openpai.json` env vars available via `process.env`
+- Use `${PAI_DIR}` in opencode.jsonc for portability
 - Access in code via `process.env.PAI_DIR`
 
 ### 7. **Logging**
@@ -786,9 +786,9 @@ await Promise.race([readPromise, timeoutPromise]);
 
 **Check:**
 1. Is hook script executable? `chmod +x ~/.config/openpai/plugins/my-hook.ts`
-2. Is path correct in opencode.json? Use `${PAI_DIR}/plugins/...`
-3. Is opencode.json valid JSON? `jq . ~/.config/openpai/opencode.json`
-4. Did you restart OpenCode after editing opencode.json?
+2. Is path correct in opencode.jsonc? Use `${PAI_DIR}/plugins/...`
+3. Is opencode.jsonc valid JSON? `jq . ~/.config/openpai/opencode.jsonc`
+4. Did you restart OpenCode after editing opencode.jsonc?
 
 **Debug:**
 ```bash
@@ -957,7 +957,7 @@ bun ~/.config/openpai/plugins/LoadContext.plugin.ts
 
 ### Multi-Hook Execution Order
 
-Plugins in same event execute **sequentially** in order defined in opencode.json:
+Plugins in same event execute **sequentially** in order defined in opencode.jsonc:
 
 ```json
 {
@@ -1122,7 +1122,7 @@ POST TOOL USE (2 plugins):
   PRDSync.plugin.ts                PRD → work.json sync [Write, Edit]
 
 KEY FILES:
-~/.config/openpai/opencode.json              Hook configuration
+~/.config/openpai/opencode.jsonc             Hook configuration
 ~/.config/openpai/plugins/                     Hook scripts (22 files)
 ~/.config/openpai/plugins/handlers/            Handler modules (6 files)
 ~/.config/openpai/plugins/lib/                 Shared libraries (13 files)
@@ -1195,7 +1195,7 @@ import {
 **Used by:** RatingCapture, WorkCompletionLearning, SessionSummary
 
 ### `plugins/lib/identity.ts`
-Identity and principal configuration from opencode.json.
+Identity and principal configuration from openpai.json.
 
 ```typescript
 import { getIdentity, getPrincipal, getDAName, getPrincipalName, getVoiceId } from './lib/identity';

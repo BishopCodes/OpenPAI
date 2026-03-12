@@ -1,10 +1,11 @@
 {
   "lockfileVersion": 1,
+  "configVersion": 0,
   "workspaces": {
     "": {
       "name": "openpai-plugins",
       "dependencies": {
-        "@opencode-ai/plugin": "latest",
+        "@opencode-ai/plugin": "1.2.10",
         "yaml": "^2.7.0",
       },
       "devDependencies": {
@@ -14,9 +15,9 @@
     },
   },
   "packages": {
-    "@opencode-ai/plugin": ["@opencode-ai/plugin@1.2.24", "https://uop-domain-050853773894.d.codeartifact.us-east-1.amazonaws.com/npm/npm-store/@opencode-ai/plugin/-/plugin-1.2.24.tgz", { "dependencies": { "@opencode-ai/sdk": "1.2.24", "zod": "4.1.8" } }, "sha512-B3hw415D+2w6AtdRdvKWkuQVT0LXDWTdnAZhZC6gbd+UHh5O5DMmnZTe/YM8yK8ZZO9Dvo5rnV78TdDDYunJiw=="],
+    "@opencode-ai/plugin": ["@opencode-ai/plugin@1.2.10", "https://uop-domain-050853773894.d.codeartifact.us-east-1.amazonaws.com/npm/npm-store/@opencode-ai/plugin/-/plugin-1.2.10.tgz", { "dependencies": { "@opencode-ai/sdk": "1.2.10", "zod": "4.1.8" } }, "sha512-Z1BMqNHnD8AGAEb+kUz0b2SOuiODwdQLdCA4aVGTXqkGzhiD44OVxr85MeoJ5AMTnnea9SnJ3jp9GAQ5riXA5g=="],
 
-    "@opencode-ai/sdk": ["@opencode-ai/sdk@1.2.24", "https://uop-domain-050853773894.d.codeartifact.us-east-1.amazonaws.com/npm/npm-store/@opencode-ai/sdk/-/sdk-1.2.24.tgz", {}, "sha512-MQamFkRl4B/3d6oIRLNpkYR2fcwet1V/ffKyOKJXWjtP/CT9PDJMtLpu6olVHjXKQi8zMNltwuMhv1QsNtRlZg=="],
+    "@opencode-ai/sdk": ["@opencode-ai/sdk@1.2.10", "https://uop-domain-050853773894.d.codeartifact.us-east-1.amazonaws.com/npm/npm-store/@opencode-ai/sdk/-/sdk-1.2.10.tgz", {}, "sha512-SyXcVqry2hitPVvQtvXOhqsWyFhSycG/+LTLYXrcq8AFmd9FR7dyBSDB3f5Ol6IPkYOegk8P2Eg2kKPNSNiKGw=="],
 
     "@types/node": ["@types/node@25.4.0", "https://uop-domain-050853773894.d.codeartifact.us-east-1.amazonaws.com/npm/npm-store/@types/node/-/node-25.4.0.tgz", { "dependencies": { "undici-types": "~7.18.0" } }, "sha512-9wLpoeWuBlcbBpOY3XmzSTG3oscB6xjBEEtn+pYXTfhyXhIxC5FsBer2KTopBlvKEiW9l13po9fq+SJY/5lkhw=="],
 

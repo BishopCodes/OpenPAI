@@ -264,10 +264,10 @@ interface SystemStats {
 }
 
 function readDAIdentity(): string {
-  const settingsPath = join(OPENPAI_DIR, "opencode.json");
+  const settingsPath = join(OPENPAI_DIR, "openpai.json");
   try {
     const settings = JSON.parse(readFileSync(settingsPath, "utf-8"));
-    return settings.daidentity?.displayName || settings.daidentity?.name || settings.env?.DA || "PAI";
+    return settings.openpai?.assistant?.name || settings.env?.DA || "PAI";
   } catch {
     return "PAI";
   }

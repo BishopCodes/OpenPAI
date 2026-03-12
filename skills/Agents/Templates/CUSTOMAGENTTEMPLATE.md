@@ -21,7 +21,7 @@ description: ""             # One-line functional description
 model: opus                 # opus | sonnet | haiku
 color: ""                   # Hex color for terminal output (e.g., "#9B59B6")
 
-# === Voice Profile (matches opencode.json daidentity.voices schema) ===
+# === Voice Profile (matches openpai.json daidentity.voices schema) ===
 voiceId: ""                 # Kokoro voice ID
 voice:
   stability: 0.50           # 0.0-1.0 — Low = expressive/varied, High = consistent

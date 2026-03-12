@@ -14,7 +14,7 @@ PAI is a general problem-solving system that magnifies human capabilities. It ru
 ~/.config/openpai/
   AGENTS.md                    # Master config (generated from template)
   AGENTS.md.template           # Source template with variables
-  opencode.json                # Single source of truth for all configuration
+  openpai.json                 # PAI config: identity, env, notifications, counts
   plugins/                       # Event lifecycle plugins (21+)
   skills/                      # 12 categories, 49 skills — each with SKILL.md
   MEMORY/                      # Persistent memory (work, learning, relationship, state)
@@ -31,7 +31,7 @@ The 7-phase execution engine: Observe, Think, Plan, Build, Execute, Verify, Lear
 12 hierarchical categories with 49 total skills in `~/.config/openpai/skills/`, each with a `SKILL.md` defining triggers, workflows, and tools. Skills are the primary capability unit.
 
 ### Plugins (`THEPLUGINSYSTEM.md`)
-21+ event plugins across the session lifecycle: SessionStart, UserPromptSubmit, PreToolUse, PostToolUse, Stop, SessionEnd. Defined in `opencode.json`, implemented in `~/.config/openpai/plugins/`.
+21+ event plugins across the session lifecycle: SessionStart, UserPromptSubmit, PreToolUse, PostToolUse, Stop, SessionEnd. Defined in `opencode.jsonc`, implemented in `~/.config/openpai/plugins/`.
 
 ### Memory (`MEMORYSYSTEM.md`)
 Persistent storage across sessions:
@@ -53,8 +53,8 @@ Hook-based security: `SecurityValidator.plugin.ts` guards Bash, Edit, Write, Rea
 ### Notifications (`THENOTIFICATIONSYSTEM.md`)
 Multi-channel: ntfy, Discord, Twilio. Voice announcements via Kokoro at localhost:8888.
 
-### Configuration (`opencode.json`)
-Single source of truth: identity (daidentity, principal), environment, permissions, plugins, notifications, status line, spinner verbs, counts, startup file loading (`loadAtStartup`), dynamic context toggles (`dynamicContext`).
+### Configuration (`opencode.jsonc` + `openpai.json`)
+Split config: `opencode.jsonc` handles OpenCode-specific settings (permissions, plugins, instructions, MCP servers, `loadAtStartup`, `dynamicContext`). `openpai.json` handles PAI-specific settings (identity, daidentity, principal, environment, notifications, status line, spinner verbs, counts).
 
 ## User Context (`USER/`)
 
@@ -70,8 +70,8 @@ Personal data directory. See `USER/README.md` for full index:
 
 At session start, three things happen:
 1. **AGENTS.md** loads natively (identity, algorithm, routing table)
-2. **`loadAtStartup` files** from `opencode.json` are force-loaded by `LoadContext.plugin.ts`
-3. **Dynamic context** injected by `LoadContext.plugin.ts`: relationship context, learning readback, active work summary (each toggleable in `opencode.json → dynamicContext`)
+2. **`loadAtStartup` files** from `opencode.jsonc` are force-loaded by `LoadContext.plugin.ts`
+3. **Dynamic context** injected by `LoadContext.plugin.ts`: relationship context, learning readback, active work summary (each toggleable in `opencode.jsonc → dynamicContext`)
 
 All other documentation loads on-demand based on the routing table in AGENTS.md.
 
@@ -79,11 +79,11 @@ All other documentation loads on-demand based on the routing table in AGENTS.md.
 
 | Target | Source | Builder | Trigger |
 |--------|--------|---------|---------|
-| `AGENTS.md` | `AGENTS.md.template` + `opencode.json` + `PAI/Algorithm/LATEST` | `bun PAI/Tools/BuildAGENTS.ts` | SessionStart hook + manual |
+| `AGENTS.md` | `AGENTS.md.template` + `openpai.json` + `PAI/Algorithm/LATEST` | `bun PAI/Tools/BuildAGENTS.ts` | SessionStart hook + manual |
 
 ## Extending PAI
 
 - **Add a skill:** Use the CreateSkill skill under Utilities
-- **Add a plugin:** Create handler in `~/.config/openpai/plugins/handlers/`, register in `opencode.json`
-- **Add startup files:** Append to `opencode.json → loadAtStartup.files`
+- **Add a plugin:** Create handler in `~/.config/openpai/plugins/handlers/`, register in `opencode.jsonc`
+- **Add startup files:** Append to `opencode.jsonc → loadAtStartup.files`
 - **Add user context:** Create files in `PAI/USER/`

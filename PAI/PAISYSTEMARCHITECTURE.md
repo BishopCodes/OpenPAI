@@ -320,7 +320,7 @@ Brief description.
 
 ### Hook Configuration
 
-Located in `opencode.json`:
+Located in `opencode.jsonc`:
 
 ```json
 {

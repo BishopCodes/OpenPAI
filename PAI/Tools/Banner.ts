@@ -118,32 +118,31 @@ function getStats(): SystemStats {
   let catchphrase = "{name} here, ready to go";
   let repoUrl = "github.com/openpai/OpenPAI";
   try {
-    const settings = JSON.parse(readFileSync(join(OPENPAI_DIR, "opencode.json"), "utf-8"));
-    name = settings.daidentity?.displayName || settings.daidentity?.name || "PAI";
-    paiVersion = settings.pai?.version || "2.0";
-    algorithmVersion = (settings.pai?.algorithmVersion || algorithmVersion).replace(/^v/i, '');
-    catchphrase = settings.daidentity?.startupCatchphrase || catchphrase;
-    repoUrl = settings.pai?.repoUrl || repoUrl;
+    const settings = JSON.parse(readFileSync(join(OPENPAI_DIR, "openpai.json"), "utf-8"));
+    name = settings.openpai?.assistant?.name || "PAI";
+    paiVersion = settings.openpai?.version || "2.0";
+    algorithmVersion = (settings.openpai?.algorithmVersion || algorithmVersion).replace(/^v/i, '');
+    catchphrase = catchphrase; // startupCatchphrase removed in new config
+    repoUrl = settings.openpai?.repoUrl || repoUrl;
   } catch {}
 
   // Replace {name} placeholder in catchphrase
   catchphrase = catchphrase.replace(/\{name\}/gi, name);
 
-  // Read counts from opencode.json (updated by StopOrchestrator at end of each session)
+  // Read counts from openpai.json (updated by StopOrchestrator at end of each session)
   // This is instant - no spawning, no file scanning
   let skills = 0, workflows = 0, plugins = 0, learnings = 0, userFiles = 0, sessions = 0;
 
   try {
-    const settings = JSON.parse(readFileSync(join(OPENPAI_DIR, "opencode.json"), "utf-8"));
-    if (settings.counts) {
-      skills = settings.counts.skills || 0;
-      workflows = settings.counts.workflows || 0;
-      plugins = settings.counts.plugins || 0;
-      learnings = settings.counts.signals || 0;
-      userFiles = settings.counts.files || 0;
+    const settings = JSON.parse(readFileSync(join(OPENPAI_DIR, "openpai.json"), "utf-8"));
+    if (settings.openpai?.counts) {
+      skills = settings.openpai.counts.skills || 0;
+      workflows = settings.openpai.counts.workflows || 0;
+      plugins = settings.openpai.counts.hooks || 0;
+      learnings = settings.openpai.counts.signals || 0;
     }
   } catch {
-    // Fallback to reasonable defaults if opencode.json is missing or malformed
+    // Fallback to reasonable defaults if openpai.json is missing or malformed
     skills = 65;
     workflows = 339;
     plugins = 18;

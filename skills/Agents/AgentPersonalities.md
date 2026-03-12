@@ -161,7 +161,7 @@ Task(prompt="You are Dr. Nova...", subagent_type="general-purpose")
 - **Template**: See `skills/Agents/Templates/CUSTOMAGENTTEMPLATE.md` for canonical identity schema
 
 > **Note (2026-02-12):** Voice configuration was migrated from this file to individual agent files.
-> The voice server now reads settings from `opencode.json` and accepts pass-through `voice_settings` from callers.
+> The voice server now reads settings from `openpai.json` and accepts pass-through `voice_settings` from callers.
 > The JSON config block that was here is no longer used by any system component.
 
 ---

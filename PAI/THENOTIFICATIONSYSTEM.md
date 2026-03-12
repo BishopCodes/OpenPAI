@@ -106,7 +106,7 @@ curl -s -X POST http://localhost:8888/notify \
 | **{DAIDENTITY.NAME}** (default) | `{DAIDENTITY.VOICEID}` | Use for most workflows |
 | **Priya** (Artist) | `ZF6FPAbjXT4488VcRRnw` | Art skill workflows |
 
-**Full voice registry:** `~/.config/openpai/skills/Agents/SKILL.md` (see Named Agents) and `~/.config/openpai/opencode.json` (daidentity.voiceId)
+**Full voice registry:** `~/.config/openpai/skills/Agents/SKILL.md` (see Named Agents) and `~/.config/openpai/openpai.json` (daidentity.voiceId)
 
 ---
 
@@ -186,8 +186,8 @@ The backgrounded `&` and redirected output (`> /dev/null 2>&1`) ensure the curl 
 
 | Channel | Service | Purpose | Configuration |
 |---------|---------|---------|---------------|
-| **ntfy** | ntfy.sh | Mobile push notifications | `opencode.json → notifications.ntfy` |
-| **Discord** | Webhook | Team/server notifications | `opencode.json → notifications.discord` |
+| **ntfy** | ntfy.sh | Mobile push notifications | `openpai.json → notifications.ntfy` |
+| **Discord** | Webhook | Team/server notifications | `openpai.json → notifications.discord` |
 | **Desktop** | macOS native | Local desktop alerts | Always available |
 
 ### Smart Routing
@@ -204,7 +204,7 @@ Notifications are automatically routed based on event type:
 
 ### Configuration
 
-Located in `~/.config/openpai/opencode.json`:
+Located in `~/.config/openpai/openpai.json`:
 
 ```json
 {
@@ -244,7 +244,7 @@ Topic name acts as password - use random string for security.
 ### Discord Setup
 
 1. Create webhook in your Discord server
-2. Add webhook URL to `opencode.json`
+2. Add webhook URL to `openpai.json`
 3. Set `discord.enabled: true`
 
 ### SMS (Not Recommended)

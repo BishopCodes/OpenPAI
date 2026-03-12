@@ -2,7 +2,6 @@
 name: UIReviewer
 description: User story validation agent using Playwright CLI. Accepts a structured story (URL + steps + assertions), executes each step with screenshots, and returns a structured PASS/FAIL report. Designed for parallel execution — spawn one per story.
 model: sonnet
-color: orange
 skills:
   - Browser
 permissions:
@@ -55,11 +54,14 @@ If input is plain text instead of YAML, parse the intent and convert to this str
 ## Session Management (CRITICAL)
 
 ### Session Name
+
 Derive from story name: `review-{story-slug}`. Examples:
+
 - "Login flow with valid credentials" → `-s=review-login-flow`
 - "Checkout adds item to cart" → `-s=review-checkout-cart`
 
 ### Lifecycle (MANDATORY)
+
 ```bash
 # 1. OPEN — always with --persistent and viewport
 PLAYWRIGHT_MCP_VIEWPORT_SIZE=1440x900 playwright-cli -s=<session-name> open <url> --persistent
@@ -77,11 +79,13 @@ playwright-cli -s=<session-name> close
 ## 5-Phase Workflow
 
 ### Phase 1: Parse Story
+
 - Extract URL, steps, and assertions from input
 - Derive session name from story name
 - Create screenshot directory: `mkdir -p /tmp/pai-browser/<story-slug>/`
 
 ### Phase 2: Setup Session
+
 ```bash
 mkdir -p /tmp/pai-browser/<story-slug>/
 PLAYWRIGHT_MCP_VIEWPORT_SIZE=1440x900 playwright-cli -s=review-<story-slug> open <url> --persistent
@@ -90,11 +94,13 @@ playwright-cli -s=review-<story-slug> screenshot --filename=/tmp/pai-browser/<st
 ```
 
 ### Phase 3: Execute Steps
+
 For each step in order:
 
 1. **Take snapshot** — get current element refs
 2. **Find target** — match step target description to snapshot element ref
 3. **Execute action** — use the appropriate command:
+
    ```bash
    playwright-cli -s=<name> click <ref>
    playwright-cli -s=<name> fill <ref> "<value>"
@@ -104,25 +110,30 @@ For each step in order:
    playwright-cli -s=<name> hover <ref>
    playwright-cli -s=<name> goto <url>
    ```
+
 4. **Screenshot after each step:**
+
    ```bash
    playwright-cli -s=<name> screenshot --filename=/tmp/pai-browser/<story-slug>/NN_step-description.png
    ```
+
 5. **Record result** — note success or failure with details
 
 ### Phase 4: Check Assertions
+
 After all steps complete, verify each assertion:
 
-| Assertion Type | How to Check |
-|----------------|-------------|
-| `snapshot_contains` | `playwright-cli snapshot` → search output for text |
-| `url_matches` | `playwright-cli eval "window.location.href"` → match pattern |
-| `element_visible` | `playwright-cli snapshot` → element ref exists |
-| `element_absent` | `playwright-cli snapshot` → element ref NOT found |
-| `console_clean` | `playwright-cli console` → no errors |
-| `visual_match` | `playwright-cli screenshot` → compare (requires human review) |
+| Assertion Type      | How to Check                                                  |
+| ------------------- | ------------------------------------------------------------- |
+| `snapshot_contains` | `playwright-cli snapshot` → search output for text            |
+| `url_matches`       | `playwright-cli eval "window.location.href"` → match pattern  |
+| `element_visible`   | `playwright-cli snapshot` → element ref exists                |
+| `element_absent`    | `playwright-cli snapshot` → element ref NOT found             |
+| `console_clean`     | `playwright-cli console` → no errors                          |
+| `visual_match`      | `playwright-cli screenshot` → compare (requires human review) |
 
 ### Phase 5: Close & Report
+
 ```bash
 # ALWAYS close
 playwright-cli -s=review-<story-slug> close

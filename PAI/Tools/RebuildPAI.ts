@@ -13,28 +13,28 @@ import { readdirSync, readFileSync, writeFileSync } from "fs";
 import { join } from "path";
 
 const HOME = process.env.HOME!;
-const PAI_DIR = join(HOME, ".opencode/PAI");
+const PAI_DIR = join(HOME, ".config/openpai/PAI");
 const COMPONENTS_DIR = join(PAI_DIR, "Components");
 const ALGORITHM_DIR = join(COMPONENTS_DIR, "Algorithm");
 const OUTPUT_FILE = join(PAI_DIR, "SKILL.md");
-const SETTINGS_PATH = join(HOME, ".opencode/opencode.json");
+const SETTINGS_PATH = join(HOME, ".config/openpai/openpai.json");
 
 /**
- * Load identity variables from opencode.json for template resolution
+ * Load identity variables from openpai.json for template resolution
  */
 function loadVariables(): Record<string, string> {
   try {
     const settings = JSON.parse(readFileSync(SETTINGS_PATH, "utf-8"));
     return {
-      "{DAIDENTITY.NAME}": settings.daidentity?.name || "PAI",
-      "{DAIDENTITY.FULLNAME}": settings.daidentity?.fullName || "Personal AI",
-      "{DAIDENTITY.DISPLAYNAME}": settings.daidentity?.displayName || "PAI",
-      "{PRINCIPAL.NAME}": settings.principal?.name || "User",
-      "{PRINCIPAL.TIMEZONE}": settings.principal?.timezone || "UTC",
-      "{DAIDENTITY.ALGORITHMVOICEID}": settings.daidentity?.voices?.algorithm?.voiceId || "",
+      "{DAIDENTITY.NAME}": settings.openpai?.assistant?.name || "PAI",
+      "{DAIDENTITY.FULLNAME}": settings.openpai?.assistant?.name || "Personal AI",
+      "{DAIDENTITY.DISPLAYNAME}": settings.openpai?.assistant?.name || "PAI",
+      "{PRINCIPAL.NAME}": settings.openpai?.principal?.name || "User",
+      "{PRINCIPAL.TIMEZONE}": settings.openpai?.principal?.timezone || "UTC",
+      "{DAIDENTITY.ALGORITHMVOICEID}": settings.openpai?.assistant?.voice?.voiceId || "",
     };
   } catch {
-    console.warn("⚠️ Could not read opencode.json, using defaults");
+    console.warn("⚠️ Could not read openpai.json, using defaults");
     return {
       "{DAIDENTITY.NAME}": "PAI",
       "{DAIDENTITY.FULLNAME}": "Personal AI",
@@ -120,7 +120,7 @@ for (const file of components) {
   // No extra newlines - components manage their own spacing
 }
 
-// Resolve template variables from opencode.json
+// Resolve template variables from openpai.json
 const variables = loadVariables();
 output = resolveVariables(output, variables);
 

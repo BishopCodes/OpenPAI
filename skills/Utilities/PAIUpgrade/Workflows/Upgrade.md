@@ -72,7 +72,8 @@ Agent 3 - PAI System State:
 "Analyze the current state of the user's PAI system:
 - List skills in ~/.config/openpai/skills/
 - List plugins in ~/.config/openpai/plugins/
-- Read ~/.config/openpai/opencode.json
+- Read ~/.config/openpai/opencode.jsonc (OpenCode config: plugins, permissions, instructions)
+- Read ~/.config/openpai/openpai.json (PAI config: identity, env, notifications)
 
 Extract and return:
 1. Installed skills (list with brief purpose)

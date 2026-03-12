@@ -290,7 +290,7 @@ Launch **parallel agents** to analyze:
 | **TELOS Agent** | User's goals, challenges, current focus | `PAI/USER/TELOS/*.md` |
 | **Project Agent** | Active projects, tech stacks, dependencies | TELOS/PROJECTS.md, recent work context |
 | **History Agent** | Recent work patterns, what's been done | `MEMORY/WORK/`, `MEMORY/STATE/current-work.json` |
-| **PAI State Agent** | System capabilities, installed skills, gaps | `skills/`, `plugins/`, `opencode.json` |
+| **PAI State Agent** | System capabilities, installed skills, gaps | `skills/`, `plugins/`, `opencode.jsonc`, `openpai.json` |
 
 **Output:** A context object that includes:
 - User's current focus areas and priorities
@@ -348,7 +348,8 @@ Extract: What user has been working on, patterns, open tasks
 Analyze:
 - ~/.config/openpai/skills/ (installed skills)
 - ~/.config/openpai/plugins/ (active plugins)
-- ~/.config/openpai/opencode.json (configuration)
+- ~/.config/openpai/opencode.jsonc (OpenCode config: plugins, permissions, instructions)
+- ~/.config/openpai/openpai.json (PAI config: identity, env, notifications)
 
 Extract: Current capabilities, potential gaps, system health
 

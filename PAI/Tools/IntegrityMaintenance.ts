@@ -234,7 +234,7 @@ function generateDescriptiveTitle(changes: FileChange[]): string {
   const hasWorkflows = paths.some(p => p.includes('/Workflows/'));
   const hasTools = paths.some(p => p.includes('/Tools/') && p.endsWith('.ts'));
   const hasPlugins = paths.some(p => p.includes('plugins/'));
-  const hasConfig = paths.some(p => p.endsWith('opencode.json'));
+  const hasConfig = paths.some(p => p.endsWith('opencode.jsonc') || p.endsWith('openpai.json'));
   const hasPAISystem = paths.some(p => p.includes('/PAI/'));
   const hasPAIUser = paths.some(p => p.includes('PAI/USER/'));
 

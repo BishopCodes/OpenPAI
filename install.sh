@@ -162,7 +162,7 @@ for dir in PAI skills MEMORY lib VoiceServer; do
   fi
 done
 
-for file in AGENTS.md opencode.json .env.example; do
+for file in AGENTS.md opencode.jsonc openpai.json .env.example; do
   if [ -f "$SCRIPT_DIR/$file" ]; then
     cp "$SCRIPT_DIR/$file" "$OPENPAI_DIR/"
   fi
@@ -211,7 +211,7 @@ echo ""
 success "${BOLD}OpenPAI installed successfully!${RESET}"
 echo ""
 info "To start: ${CYAN}openpai${RESET} (or restart your shell first)"
-info "Config:   ${SILVER}${OPENPAI_DIR}/opencode.json${RESET}"
+info "Config:   ${SILVER}${OPENPAI_DIR}/opencode.jsonc & openpai.json${RESET}"
 info "Voice:    ${SILVER}${OPENPAI_DIR}/VoiceServer/start.sh${RESET}"
 echo ""
 echo -e "${STEEL}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${RESET}"

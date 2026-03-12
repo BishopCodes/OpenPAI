@@ -1,0 +1,66 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+
+  // ─── Permissions ───
+  "permission": {
+    "Bash": "allow",
+    "Read": "allow",
+    "Write": "allow",
+    "Edit": "allow",
+    "MultiEdit": "allow",
+    "Glob": "allow",
+    "Grep": "allow",
+    "LS": "allow",
+    "WebFetch": "allow",
+    "WebSearch": "allow",
+    "NotebookRead": "allow",
+    "NotebookEdit": "allow",
+    "TodoWrite": "allow",
+    "Task": "allow",
+    "mcp__*": "allow",
+    "Bash(rm -rf *)": "ask",
+    "Bash(rm -r *)": "ask",
+    "Bash(git push --force*)": "ask",
+    "Bash(git reset --hard*)": "ask",
+    "Bash(chmod -R 777*)": "ask",
+    "Bash(> /dev/*)": "ask",
+    "Write(~/.config/openpai/opencode.jsonc)": "ask",
+    "Edit(~/.config/openpai/opencode.jsonc)": "ask",
+    "Write(~/.config/openpai/openpai.json)": "ask",
+    "Edit(~/.config/openpai/openpai.json)": "ask",
+    "Read(~/.ssh/*)": "ask",
+    "Read(~/.gnupg/*)": "ask",
+    "Read(~/.aws/*)": "ask",
+  },
+  // ─── Context & Instructions ───
+  "instructions": [
+    "AGENTS.md",
+    "PAI/CONTEXT_ROUTING.md",
+    "PAI/AISTEERINGRULES.md",
+    "PAI/USER/AISTEERINGRULES.md",
+    "PAI/USER/PROJECTS/PROJECTS.md",
+  ],
+
+  // ─── Plugins ───
+  "plugin": [
+    ".opencode/plugins/security-validator.ts",
+    ".opencode/plugins/load-context.ts",
+    ".opencode/plugins/voice-completion.ts",
+    ".opencode/plugins/rating-capture.ts",
+    ".opencode/plugins/session-manager.ts",
+    ".opencode/plugins/skill-guard.ts",
+    ".opencode/plugins/tui-hooks.ts",
+    ".opencode/plugins/doc-integrity.ts",
+    ".opencode/plugins/session-cache.ts",
+    ".opencode/plugins/learning-hooks.ts",
+  ],
+
+  // ─── MCP Servers ───
+  "mcp": {
+    "cloudflare": {
+      "type": "local",
+      "command": ["npx", "@anthropic-ai/cloudflare-mcp-server"],
+      "environment": {},
+    },
+  },
+}

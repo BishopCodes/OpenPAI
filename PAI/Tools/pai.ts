@@ -402,7 +402,7 @@ async function cmdLaunch(options: { mcp?: string; resume?: boolean; skipPerms?: 
 
   // Add flags
   // NOTE: We no longer use --dangerously-skip-permissions by default.
-  // The opencode.json permission system (allow/deny/ask) provides proper security.
+  // The opencode.jsonc permission system (allow/deny/ask) provides proper security.
   // Use --dangerous flag explicitly if you really need to skip all permission checks.
   if (options.resume) {
     args.push("--resume");
@@ -548,7 +548,7 @@ function cmdMcpList() {
 
 async function cmdPrompt(prompt: string) {
   // One-shot prompt execution
-  // NOTE: No --dangerously-skip-permissions - rely on opencode.json permissions
+  // NOTE: No --dangerously-skip-permissions - rely on opencode.jsonc permissions
   const args = ["opencode", "-p", prompt];
 
   process.chdir(OPENPAI_DIR);

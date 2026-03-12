@@ -404,7 +404,7 @@ Created in PLAN via `generatePRDTemplate()`. PRDWriteback syncs ISC to disk each
 
 ## Configuration
 
-Custom values in `opencode.json`:
+Custom values in `openpai.json`:
 - `daidentity.name` - DA's name ({DAIDENTITY.NAME})
 - `principal.name` - User's name ({PRINCIPAL.NAME})
 - `principal.timezone` - User's timezone

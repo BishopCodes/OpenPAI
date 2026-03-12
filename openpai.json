@@ -1,0 +1,58 @@
+{
+  "env": {
+    "PAI_DIR": "~/.config/openpai",
+    "PROJECTS_DIR": "~/Projects",
+    "PAI_CONFIG_DIR": "~/.config/openpai",
+    "AGENT_TEAMS": "1"
+  },
+  "openpai": {
+    "version": "1.0.0",
+    "repoUrl": "https://github.com/your-user/openpai",
+    "algorithmVersion": "3.7.0",
+    "assistant": {
+      "name": "DA",
+      "personality": {
+        "enthusiasm": 60,
+        "energy": 75,
+        "expressiveness": 65,
+        "resilience": 85,
+        "composure": 70,
+        "optimism": 75,
+        "warmth": 70,
+        "formality": 30,
+        "directness": 80,
+        "precision": 95,
+        "curiosity": 90,
+        "playfulness": 45
+      },
+      "voice": {
+        "provider": "kokoro",
+        "model": "kokoro-82m",
+        "voiceId": "af_heart",
+        "speed": 1.0
+      }
+    },
+    "principal": {
+      "name": "User",
+      "timezone": "America/Los_Angeles"
+    },
+    "notifications": {
+      "ntfy": {
+        "enabled": false,
+        "topic": "",
+        "server": "https://ntfy.sh"
+      },
+      "discord": {
+        "enabled": false,
+        "webhookUrl": ""
+      }
+    },
+    "counts": {
+      "skills": 21,
+      "workflows": 338,
+      "hooks": 21,
+      "signals": 0,
+      "sessions": 0
+    }
+  }
+}

@@ -47,7 +47,7 @@ Same skills. Same agents. Same philosophy. Zero paid API dependencies.
 | Hooks system | Plugins system (OpenCode native) |
 | `~/.claude/` config | `~/.config/openpai/` config |
 | `CLAUDE.md` | `AGENTS.md` |
-| `settings.json` | `opencode.json` |
+| `settings.json` | `opencode.jsonc` + `openpai.json` |
 
 Everything else — the skill system, memory architecture, TELOS framework, agents, algorithms, security model — is inherited from upstream PAI. For full documentation on how PAI works, see the **[original project](https://github.com/danielmiessler/Personal_AI_Infrastructure)**.
 
