@@ -17,40 +17,43 @@ extracted_from: SKILL.md lines 535-627
 
 ### Model Selection for Agents (CRITICAL FOR SPEED)
 
-**The Task tool has a `model` parameter - USE IT.**
+**The Inference.ts tier system handles model selection automatically.**
 
-Agents default to inheriting the parent model (often Opus). This is SLOW for simple tasks. Each inference with 30K+ context takes 5-15 seconds on Opus. A simple 10-tool-call task = 1-2+ minutes of pure thinking time.
+Agents inherit the parent model by default. For optimal performance, use the tier system to match task complexity to model capability. Each inference with 30K+ context takes 5-15 seconds on a smart-tier model. A simple 10-tool-call task = 1-2+ minutes of pure thinking time.
 
 **Model Selection Matrix:**
 
-| Task Type | Model | Why |
-|-----------|-------|-----|
-| Deep reasoning, complex architecture, strategic decisions | `opus` | Maximum intelligence needed |
-| Standard implementation, moderate complexity, most coding | `sonnet` | Good balance of speed + capability |
-| Simple lookups, file reads, quick checks, parallel grunt work | `haiku` | 10-20x faster, sufficient intelligence |
+| Task Type | Tier | Why |
+|-----------|------|-----|
+| Deep reasoning, complex architecture, strategic decisions | `smart` | Maximum intelligence needed |
+| Standard implementation, moderate complexity, most coding | `standard` | Good balance of speed + capability |
+| Simple lookups, file reads, quick checks, parallel grunt work | `fast` tier | 10-20x faster, sufficient intelligence |
 
 **Examples:**
 
 ```typescript
-// WRONG - defaults to Opus, takes minutes
+// WRONG - defaults to smart tier, takes minutes
 Task({ prompt: "Check if blue bar exists on website", subagent_type: "general-purpose" })
 
-// RIGHT - Haiku for simple visual check
-Task({ prompt: "Check if blue bar exists on website", subagent_type: "general-purpose", model: "haiku" })
+// RIGHT - fast tier for simple visual check
+Task({ prompt: "Check if blue bar exists on website", subagent_type: "general-purpose" })
+// → Use Inference.ts with "fast" tier
 
-// RIGHT - Sonnet for standard coding task
-Task({ prompt: "Implement the login form validation", subagent_type: "Engineer", model: "sonnet" })
+// RIGHT - standard tier for standard coding task
+Task({ prompt: "Implement the login form validation", subagent_type: "Engineer" })
+// → Use Inference.ts with "standard" tier
 
-// RIGHT - Opus for complex architectural planning
-Task({ prompt: "Design the distributed caching strategy", subagent_type: "Architect", model: "opus" })
+// RIGHT - smart tier for complex architectural planning
+Task({ prompt: "Design the distributed caching strategy", subagent_type: "Architect" })
+// → Use Inference.ts with "smart" tier
 ```
 
 **Rule of Thumb:**
-- If it's grunt work or verification → `haiku`
-- If it's implementation or research → `sonnet`
-- If it requires deep strategic thinking → `opus` (or let it default)
+- If it's grunt work or verification → `fast` tier
+- If it's implementation or research → `standard` tier
+- If it requires deep strategic thinking → `smart` tier (or let it default)
 
-**Parallel tasks especially benefit from haiku** - launching 5 haiku agents is faster AND cheaper than 1 Opus agent doing sequential work.
+**Parallel tasks especially benefit from fast tier** - launching 5 fast-tier agents is faster AND cheaper than 1 smart-tier agent doing sequential work.
 
 ### Agent Types
 
@@ -115,24 +118,23 @@ Every agent prompt MUST include a `## Scope` section that matches the validated 
 
 **Timing + Model Selection:**
 
-| Timing | Model | Agent Output | Example |
-|--------|-------|-------------|---------|
-| **fast** | `haiku` | <500 words, direct answer | "Check if server is running" |
-| **standard** | `sonnet` | <1500 words, focused work | "Implement login validation" |
-| **deep** | `opus` | No limit, thorough analysis | "Comprehensive security audit" |
+| Timing | Tier | Agent Output | Example |
+|--------|------|-------------|---------|
+| **fast** | `fast` | <500 words, direct answer | "Check if server is running" |
+| **standard** | `standard` | <1500 words, focused work | "Implement login validation" |
+| **deep** | `smart` | No limit, thorough analysis | "Comprehensive security audit" |
 
 **Examples:**
 
 ```typescript
-// FAST — simple check, haiku model, minimal output
+// FAST — simple check, fast-tier model, minimal output
 Task({
   prompt: `Check if the auth middleware exports are correct.
 ## Scope
 Timing: FAST — direct answer only.
 - Under 500 words
 - Answer the question, report the result, done`,
-  subagent_type: "Explore",
-  model: "haiku"
+  subagent_type: "Explore"
 })
 
 // STANDARD — typical implementation work
@@ -142,8 +144,7 @@ Task({
 Timing: STANDARD — focused implementation.
 - Under 1500 words
 - Stay on task, deliver the work, verify it works`,
-  subagent_type: "Engineer",
-  model: "sonnet"
+  subagent_type: "Engineer"
 })
 
 // DEEP — comprehensive analysis
@@ -154,8 +155,7 @@ Timing: DEEP — comprehensive analysis.
 - No word limit
 - Explore alternatives, consider edge cases
 - Thorough verification and documentation`,
-  subagent_type: "Pentester",
-  model: "opus"
+  subagent_type: "Pentester"
 })
 ```
 

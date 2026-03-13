@@ -93,18 +93,18 @@ evals golden add --use-case newsletter-summary --test-id 001 --file expected.md
 evals prompt create --use-case newsletter-summary --version v1.0.0 --file prompt.txt
 
 # Run operations
-evals run --use-case newsletter-summary --model claude-3-5-sonnet --prompt v1.0.0
+evals run --use-case newsletter-summary --model <provider/model-id> --prompt v1.0.0
 evals run --use-case newsletter-summary --all-models --prompt v1.0.0
 
 # Query operations
 evals query runs --use-case newsletter-summary --limit 10
-evals query runs --model gpt-4o --score-min 0.8
+evals query runs --model <provider/model-id> --score-min 0.8
 evals query runs --since 2025-11-01
 
 # Compare operations
 evals compare runs --run-a <id> --run-b <id>
 evals compare models --use-case newsletter-summary --prompt v1.0.0
-evals compare prompts --use-case newsletter-summary --model claude-3-5-sonnet
+evals compare prompts --use-case newsletter-summary --model <provider/model-id>
 
 # List operations
 evals list use-cases
@@ -126,11 +126,11 @@ evals list models
 **AI orchestrates the CLI based on user intent:**
 
 ```typescript
-// User says: "Run evals for newsletter summary with Claude and GPT-4"
+// User says: "Run evals for newsletter summary with two different models"
 
 // AI interprets and executes deterministic CLI commands:
-await bash('evals run --use-case newsletter-summary --model claude-3-5-sonnet');
-await bash('evals run --use-case newsletter-summary --model gpt-4o');
+await bash('evals run --use-case newsletter-summary --model <provider/model-a>');
+await bash('evals run --use-case newsletter-summary --model <provider/model-b>');
 await bash('evals compare models --use-case newsletter-summary');
 
 // AI then summarizes results for user in structured format
@@ -164,7 +164,7 @@ tool command subcommand --flag value
 # Examples:
 evals use-case create --name foo
 evals test-case add --use-case foo --file test.json
-evals run --use-case foo --model claude-3-5-sonnet
+evals run --use-case foo --model <provider/model-id>
 ```
 
 **2. Output Formats**
@@ -221,7 +221,7 @@ evals run --use-case newsletter-summary
 
 # Advanced options available
 evals run --use-case newsletter-summary \
-  --model claude-3-5-sonnet \
+  --model <provider/model-id> \
   --prompt v2.0.0 \
   --test-case 001 \
   --verbose \
@@ -245,8 +245,8 @@ tool run --quiet             # Minimal output
 tool run --verbose           # Detailed logging
 
 # Resource selection flags
-tool run --model haiku       # Use fast/cheap model
-tool run --model opus        # Use powerful/expensive model
+tool run --model fast          # Use fast/cheap model (fast tier)
+tool run --model smart         # Use powerful/expensive model (smart tier)
 
 # Post-processing flags
 tool generate --thumbnail    # Generate additional thumbnail version
@@ -542,11 +542,11 @@ evals compare prompts --use-case <name> --model <model>
 
 ### Step 3: Prompting Integration
 ```
-User: "Run evals for newsletter summary with Claude and GPT-4, then compare them"
+User: "Run evals for newsletter summary with two models, then compare them"
 
 AI executes:
-1. evals run --use-case newsletter-summary --model claude-3-5-sonnet
-2. evals run --use-case newsletter-summary --model gpt-4o
+1. evals run --use-case newsletter-summary --model <provider/model-a>
+2. evals run --use-case newsletter-summary --model <provider/model-b>
 3. evals compare models --use-case newsletter-summary
 4. Summarize results in structured format
 

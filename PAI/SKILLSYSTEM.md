@@ -801,9 +801,9 @@ Workflows should include tables that map natural language intent to CLI flags:
 
 | User Says | Flag | Use Case |
 |-----------|------|----------|
-| "fast", "quick" | `--model haiku` | Speed priority |
-| "best", "highest quality" | `--model opus` | Quality priority |
-| (default) | `--model sonnet` | Balanced default |
+| "fast", "quick" | `--model fast` | Speed priority (fast tier) |
+| "best", "highest quality" | `--model smart` | Quality priority (smart tier) |
+| (default) | `--model standard` | Balanced default (standard tier) |
 
 ## Output Options
 
@@ -907,7 +907,7 @@ This pattern (inspired by indydevdan's variable-centric approach) enables workfl
 |----------|----------|---------|
 | **Mode flags** | `--fast`, `--thorough`, `--dry-run` | Execution behavior |
 | **Output flags** | `--format json`, `--quiet`, `--verbose` | Output control |
-| **Resource flags** | `--model haiku`, `--model opus` | Model/resource selection |
+| **Resource flags** | `--model fast`, `--model smart` | Model/resource selection (via Inference.ts tiers) |
 | **Post-process flags** | `--thumbnail`, `--transparent` | Additional processing |
 
 **Example: Well-Configured Tool**

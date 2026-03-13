@@ -1138,7 +1138,7 @@ KEY FILES:
 INFERENCE TOOL (for plugins needing AI):
 Path: ~/.config/openpai/PAI/Tools/Inference.ts
 Import: import { inference } from '../PAI/Tools/Inference'
-Levels: fast (haiku/15s) | standard (sonnet/30s) | smart (opus/90s)
+Levels: fast (~15s) | standard (~30s) | smart (~90s) — models discovered at runtime from configured providers
 
 TAB STATE SYSTEM:
 Inference: 🧠…  Orange #B35A00  (AI thinking)

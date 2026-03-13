@@ -53,6 +53,24 @@
       "hooks": 21,
       "signals": 0,
       "sessions": 0
+    },
+    "imageServices": {
+      "image": {
+        "service": "flux",
+        "model": "flux-1.1-pro"
+      },
+      "editing": {
+        "service": "nano-banana",
+        "model": "nano-banana"
+      },
+      "diagram": {
+        "service": "openai",
+        "model": "gpt-image-1"
+      },
+      "video": {
+        "service": "openai",
+        "model": "sora-2-pro"
+      }
     }
   }
 }

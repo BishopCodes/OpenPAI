@@ -39,7 +39,7 @@ RUN cd /tmp/openpai-src && bash install.sh
 
 # ─── Verify installation ─────────────────────────────────
 RUN test -d /root/.config/openpai/.opencode \
-    && test -f /root/.config/openpai/opencode.json \
+    && test -f /root/.config/openpai/opencode.jsonc \
     && test -f /root/.config/openpai/AGENTS.md \
     && echo "OpenPAI installation verified"
 

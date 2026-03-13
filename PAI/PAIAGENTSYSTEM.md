@@ -136,17 +136,18 @@ Custom agents are composed on-the-fly from traits using ComposeAgent. Each uniqu
 
 ## Model Selection
 
-Always specify the appropriate model for agent work:
+Model selection is handled automatically via `Inference.ts` tier system. The system discovers available models from configured providers and classifies them into tiers:
 
-| Task Type | Model | Speed |
-|-----------|-------|-------|
-| Simple checks, grunt work | `haiku` | 10-20x faster |
-| Standard analysis, implementation | `sonnet` | Balanced |
-| Deep reasoning, architecture | `opus` | Maximum intelligence |
+| Task Type | Tier | Speed |
+|-----------|------|-------|
+| Simple checks, grunt work | `fast` | 10-20x faster |
+| Standard analysis, implementation | `standard` | Balanced |
+| Deep reasoning, architecture | `smart` | Maximum intelligence |
 
 ```typescript
-// Parallel custom agents benefit from haiku/sonnet for speed
-Task({ prompt: agentPrompt, subagent_type: "general-purpose", model: "sonnet" })
+// Parallel custom agents benefit from fast/standard tiers for speed
+Task({ prompt: agentPrompt, subagent_type: "general-purpose" })
+// → Inference.ts selects appropriate model from configured providers
 ```
 
 ---
@@ -158,9 +159,9 @@ Task({ prompt: agentPrompt, subagent_type: "general-purpose", model: "sonnet" })
 ```typescript
 Task({
   prompt: "Verify consistency across all agent outputs: [results]",
-  subagent_type: "general-purpose",
-  model: "haiku"
+  subagent_type: "general-purpose"
 })
+// → Uses fast tier automatically for verification work
 ```
 
 ---
